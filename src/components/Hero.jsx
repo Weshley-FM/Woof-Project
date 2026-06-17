@@ -359,7 +359,7 @@ function Hero() {
                   aria-label={`$${plan.price} per month`}
                 >
                   <span>$</span>
-                  {plan.price}
+                  <span className={!plan.popular ? 'text-gradient-primary' : ''}>{plan.price}</span>
                   <small>/mo</small>
                 </div>
               </div>
@@ -370,7 +370,7 @@ function Hero() {
               <ul className="plan-card__features">
                 {plan.features.map((feature) => (
                   <li key={feature}>
-                    <CheckIcon />
+                    <CheckIcon isGradient={!plan.popular} />
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -740,10 +740,18 @@ function ImageIcon() {
   )
 }
 
-function CheckIcon() {
+function CheckIcon({ isGradient = false }) {
   return (
-    <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
-      <circle cx="10" cy="10" r="9" fill="currentColor" />
+    <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false" style={{width: 20, height: 20}}>
+      {isGradient && (
+        <defs>
+          <linearGradient id="check-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#2DD4BF" />
+            <stop offset="100%" stopColor="var(--color-primary-60)" />
+          </linearGradient>
+        </defs>
+      )}
+      <circle cx="10" cy="10" r="9" fill={isGradient ? "url(#check-gradient)" : "var(--color-primary-60)"} />
       <path
         d="m6.2 10.2 2.4 2.4 5.2-5.4"
         fill="none"
