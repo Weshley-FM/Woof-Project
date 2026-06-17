@@ -1,6 +1,6 @@
 .integration-page-container {
   position: relative;
-  overflow: hidden;
+  overflow-x: clip; /* Allow top glow to spill into navbar but prevent horizontal scroll */
 }
 
 /* Green ambient glows matching the design */
