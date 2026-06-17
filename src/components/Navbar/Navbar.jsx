@@ -26,7 +26,7 @@ export default function Navbar({ showLogo = true }) {
           <Link to="/" className={`transition-colors hover:text-white ${location.pathname === '/' ? 'text-white font-medium' : 'text-natural-70'}`}>Home</Link>
           <Link to="/features" className={`transition-colors hover:text-white ${location.pathname === '/features' ? 'text-white font-medium' : 'text-natural-70'}`}>Features</Link>
           <Link to="/pricing" className={`transition-colors hover:text-white ${location.pathname === '/pricing' ? 'text-white font-medium' : 'text-natural-70'}`}>Pricing</Link>
-          <Link to="/integrations" className={`transition-colors hover:text-white ${location.pathname === '/integrations' ? 'text-white font-medium' : 'text-natural-70'}`}>Integration</Link>
+          <Link to="/integration" className={`transition-colors hover:text-white ${location.pathname === '/integration' ? 'text-white font-medium' : 'text-natural-70'}`}>Integration</Link>
           <Link to="/documentation" className={`transition-colors hover:text-white ${location.pathname === '/documentation' ? 'text-white font-medium' : 'text-natural-70'}`}>Documentation</Link>
         </div>
 
@@ -56,7 +56,7 @@ export default function Navbar({ showLogo = true }) {
           <Link to="/" onClick={() => setIsMenuOpen(false)} className={`transition-colors hover:text-white ${location.pathname === '/' ? 'text-white font-medium' : 'text-natural-70'}`}>Home</Link>
           <Link to="/features" onClick={() => setIsMenuOpen(false)} className={`transition-colors hover:text-white ${location.pathname === '/features' ? 'text-white font-medium' : 'text-natural-70'}`}>Features</Link>
           <Link to="/pricing" onClick={() => setIsMenuOpen(false)} className={`transition-colors hover:text-white ${location.pathname === '/pricing' ? 'text-white font-medium' : 'text-natural-70'}`}>Pricing</Link>
-          <Link to="/integrations" onClick={() => setIsMenuOpen(false)} className={`transition-colors hover:text-white ${location.pathname === '/integrations' ? 'text-white font-medium' : 'text-natural-70'}`}>Integration</Link>
+          <Link to="/integration" onClick={() => setIsMenuOpen(false)} className={`transition-colors hover:text-white ${location.pathname === '/integration' ? 'text-white font-medium' : 'text-natural-70'}`}>Integration</Link>
           <Link to="/documentation" onClick={() => setIsMenuOpen(false)} className={`transition-colors hover:text-white ${location.pathname === '/documentation' ? 'text-white font-medium' : 'text-natural-70'}`}>Documentation</Link>
           <div className="flex flex-col gap-3 mt-2">
             <Link to="/login" onClick={() => setIsMenuOpen(false)} className="rounded-lg bg-[#bfff00] px-6 py-3 text-center text-[16px] font-medium text-black font-sans w-full hover:bg-[#bfff00]/90 transition-colors">
