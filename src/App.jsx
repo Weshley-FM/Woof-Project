@@ -1,19 +1,19 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import MainPage from './MainPage'
-import PricingPage from './PricingPage'
-import DocumentationPage from './DocumentationPage'
-import RegisterPage from './RegisterPage'
-import Login from './components/Login'
-import Features from './components/Features'
-import Integration from './components/Integration'
+import Home from './pages/Home/Home'
+import PricingPage from './pages/Pricing/Pricing'
+import DocumentationPage from './pages/Documentation/Documentation'
+import RegisterPage from './pages/Register/Register'
+import Login from './pages/Login/Login'
+import Features from './pages/Features/Features'
+import Integration from './pages/Integrations/Integration'
 import useScrollReveal from './hooks/useScrollReveal'
 
 function AppRoutes() {
   useScrollReveal(true);
   return (
     <Routes>
-      <Route path="/" element={<MainPage />} />
+      <Route path="/" element={<Home />} />
       <Route path="/pricing" element={<PricingPage />} />
       <Route path="/documentation" element={<DocumentationPage />} />
       <Route path="/register" element={<RegisterPage />} />

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import logoProduct from './assets/Logo.png'
+import logoProduct from '../../assets/Logo.png'
 
 export default function Navbar({ showLogo = true }) {
   const location = useLocation()

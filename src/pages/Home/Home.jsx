@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Bug, ChevronRight, Code2, Copy, Folder, Play, Sparkles } from 'lucide-react'
-import logoProduct from './assets/Logo.png'
-import Footer from './Footer'
-import Navbar from './Navbar'
+import logoProduct from '../../assets/Logo.png'
+import Footer from '../../components/Footer/Footer'
+import Navbar from '../../components/Navbar/Navbar'
 
 export default function MainPage() {
   const [showSplash, setShowSplash] = useState(true)

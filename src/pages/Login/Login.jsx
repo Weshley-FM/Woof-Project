@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import Footer from '../Footer.jsx'
+import Footer from '../../components/Footer/Footer'
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false)

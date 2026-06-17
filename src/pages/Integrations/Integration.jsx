@@ -1,6 +1,6 @@
 import './Integration.css';
-import Navbar from '../Navbar.jsx';
-import Footer from '../Footer.jsx';
+import Navbar from '../../components/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer';
 
 function IntellijIcon() {
   return (

@@ -1,7 +1,7 @@
 import './Features.css';
-import './Hero.css'; // Reuse some Hero components CSS (PromptCard, CodePreview, FileTree)
-import Navbar from '../Navbar.jsx';
-import Footer from '../Footer.jsx';
+import '../Home/Hero.css'; // Reuse some Hero components CSS (PromptCard, CodePreview, FileTree)
+import Navbar from '../../components/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer';
 
 const codeRows = [
   { number: '1', parts: [{ text: '<?php' }] },
