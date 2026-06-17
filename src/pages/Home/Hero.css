@@ -710,37 +710,60 @@
 }
 
 .work-step {
+  position: relative;
   min-height: 132px;
   padding: 23px 22px 20px;
-  color: var(--color-neutral-10);
-  background: linear-gradient(180deg, #1d1d1d, #0d0d0d);
-  border: 1px solid rgba(251, 251, 251, 0.42);
+  color: #ffffff;
+  background: linear-gradient(180deg, #18181b 0%, transparent 100%);
+  border-radius: 16px;
   transition:
-    border-color 180ms ease,
+    background 180ms ease,
     transform 180ms ease;
 }
 
+.work-step::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, transparent 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  transition: background 180ms ease;
+}
+
 .work-step--active {
-  background:
-    linear-gradient(180deg, rgba(200, 253, 38, 0.74), rgba(100, 127, 19, 0.12)),
-    var(--color-neutral-100);
-  border-color: var(--color-primary-60);
+  background: linear-gradient(180deg, rgba(133, 169, 25, 0.85) 0%, transparent 100%);
+}
+
+.work-step--active::before {
+  background: linear-gradient(180deg, rgba(200, 253, 38, 0.8) 0%, transparent 100%);
 }
 
 .work-step span {
   display: block;
   margin-bottom: 18px;
-  color: inherit;
-  font-size: 14px;
+  color: #ffffff;
+  font-size: 20px;
   font-weight: 500;
   line-height: 1;
   letter-spacing: 0;
 }
 
+.work-step h3 {
+  font-size: 22px;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0;
+}
+
 .work-step p {
   margin: 10px 0 0;
-  color: var(--color-neutral-60);
-  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
   line-height: 1.55;
   letter-spacing: 0;
 }
@@ -885,9 +908,27 @@
   color: var(--color-neutral-10);
   background: rgba(251, 251, 251, 0.01);
   border: 1px solid rgba(200, 253, 38, 0.42);
+  border-radius: 16px;
   transition:
     border-color 180ms ease,
     transform 180ms ease;
+}
+
+.plan-card:not(.plan-card--popular) {
+  border-color: transparent;
+}
+
+.plan-card:not(.plan-card--popular)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(to right, #2DD4BF, var(--color-primary-60));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 .plan-card--popular {
@@ -902,7 +943,7 @@
   padding: 6px 18px;
   border-radius: 5px 5px 0 0;
   color: var(--color-neutral-100);
-  background: var(--color-primary-60);
+  background: linear-gradient(to right, #2DD4BF, var(--color-primary-60));
   font-size: 11px;
   font-weight: 500;
   line-height: 1.2;
@@ -938,10 +979,7 @@
   letter-spacing: 0;
 }
 
-.plan-card--popular + .plan-card .plan-card__price,
-.plan-card:not(.plan-card--popular) .plan-card__price {
-  color: #45e9a8;
-}
+/* Color removed so it defaults to white/grey properly, while the price number uses text-gradient-primary */
 
 .plan-card__price span {
   margin: 2px 8px 0 0;

@@ -164,7 +164,7 @@ export default function Features() {
         <div className="absolute -left-1/4 top-0 h-[700px] w-[700px] rounded-full bg-[#2DD4BF]/30 blur-[120px] opacity-90 pointer-events-none" />
 
         <section className="features-hero relative z-10" data-reveal="fade">
-          <h1 className="features-section-title section-title font-mono text-[56px] leading-[1.05] sm:text-[64px] lg:text-[72px] text-white">Supercharge Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-primary-60">Workflow.</span></h1>
+          <h1 className="features-section-title section-title font-mono text-[56px] leading-[1.05] sm:text-[64px] lg:text-[72px] text-white">Supercharge Your Workflow.</h1>
           <p className="features-section-desc section-copy font-sans text-[17px] text-neutral-400">
             Boost your development speed with AI that understands<br />your entire project, fixes issues automatically.
           </p>

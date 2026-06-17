@@ -65,3 +65,12 @@ input {
 button {
   cursor: pointer;
 }
+
+.text-gradient-primary {
+  background: linear-gradient(to right, #2DD4BF, var(--color-primary-60));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
+}
