@@ -122,7 +122,7 @@ export default function Integration() {
 
         <section className="integration-hero relative z-10">
           <div className="integration-hero-text" data-reveal="fade">
-            <h1 className="font-mono text-[56px] leading-[1.05] sm:text-[64px] lg:text-[72px] text-white mb-6">Connect Your<br />Workflow In<br /><span className="text-gradient-primary">One Place</span></h1>
+            <h1 className="font-mono text-[56px] leading-[1.05] sm:text-[64px] lg:text-[72px] text-white mb-6">Connect Your<br />Workflow In<br />One Place</h1>
             <p className="font-sans text-[17px] text-neutral-400 mb-8">Integrate your favorite tools and bring your entire workflow together from source control to issue tracking.</p>
             <button className="bg-primary-60 text-black font-medium text-[16px] rounded-xl hover:bg-primary-60/90 transition-colors" style={{width:'fit-content', padding:'16px 32px'}}>Explore</button>
           </div>

@@ -140,7 +140,7 @@ function Hero() {
             <h1 className="hero__heading font-mono text-[56px] leading-[1.05] sm:text-[64px] lg:text-[72px] text-white">
               Code Faster,
               <br />
-              <span className="text-gradient-primary">Debug Smarter.</span>
+              Debug Smarter.
             </h1>
             <p className="hero__description font-sans text-[17px] text-neutral-400">
               Your AI-powered pair programmer. Generate functions, fix bugs, and
