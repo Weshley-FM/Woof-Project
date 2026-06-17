@@ -1,4 +1,5 @@
 import './Hero.css'
+import { ChevronRight, Folder, Play } from 'lucide-react'
 
 const languageItems = [
   { name: 'PHP', icon: <PhpIcon /> },
@@ -134,40 +135,146 @@ const codeRows = [
 function Hero() {
   return (
     <>
-      <section className="hero" id="home">
-        <div className="landing-container hero__inner">
-          <div className="hero__content">
-            <h1 className="hero__heading font-mono text-[56px] leading-[1.05] sm:text-[64px] lg:text-[72px] text-white">
-              Code Faster,
-              <br />
-              Debug Smarter.
-            </h1>
-            <p className="hero__description font-sans text-[17px] text-neutral-400">
-              Your AI-powered pair programmer. Generate functions, fix bugs, and
-              refactor code in seconds.
-            </p>
-            <div className="hero__cta" data-reveal="up">
-              <button className="button-primary" type="button">
-                Start Free Coding
-              </button>
-              <a href="#how-it-works" className="hero__video-link">
-                <span className="hero__video-icon">
-                  <PlayIcon />
-                </span>
-                <span>Watch a Video</span>
-              </a>
-            </div>
-            <MetricPair className="hero__metrics" />
+      <section className="section-reveal hero-reveal relative z-0 grid grid-cols-1 gap-0 overflow-visible pb-10 pt-10 lg:min-h-[640px] lg:grid-cols-12" id="home">
+        <div className="hero-neon-field" />
+        <div className="hero-neon-beam" />
+        <div className="hero-scan-line" />
+
+        {/* Left Column - Content */}
+        <div className="relative z-10 col-span-1 lg:col-span-5 px-6 sm:px-10 lg:px-0 lg:pl-[max(4rem,calc(50vw-576px+4rem))]">
+          {/* Headline - Two perfect lines */}
+          <div className="opacity-0 translate-y-8 animate-fade-up font-mono text-[44px] sm:text-[56px] lg:text-[70px] leading-[1.1] font-normal text-white whitespace-nowrap">
+            <div>Code Faster,</div>
+            <div>Debug Smarter.</div>
           </div>
 
-          <div
-            className="hero__visual"
-            aria-label="AI code generation preview"
-          >
-            <PromptCard />
-            <div className="hero__visual-grid">
-              <FileTree />
-              <CodePreview />
+          {/* Subheadline */}
+          <p className="mt-6 max-w-md opacity-0 translate-y-8 animate-fade-up-delay-200 text-[18px] leading-[1.6] text-neutral-400 font-sans">
+            Your AI-powered pair programmer. Generate functions, fix bugs, and refactor code in seconds.
+          </p>
+
+          {/* Action Buttons */}
+          <div className="mt-8 opacity-0 translate-y-8 animate-fade-up-delay-400 flex flex-col gap-6 sm:flex-row sm:items-center">
+            <button className="rounded-lg bg-[#bfff00] px-6 py-3 text-[16px] font-medium text-black font-sans transition-transform duration-200 hover:scale-[1.02]">
+              Start Free Coding
+            </button>
+            <button className="inline-flex items-center gap-3 font-sans text-[16px]">
+              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-primary-60 p-2 text-primary-60">
+                <Play className="h-4 w-4" />
+              </span>
+              <span className="bg-gradient-to-r from-[#2DD4BF] to-primary-60 bg-clip-text text-transparent font-medium">
+                Watch a Video
+              </span>
+            </button>
+          </div>
+
+          {/* Stats Section */}
+          <div className="mt-16 opacity-0 translate-y-8 animate-fade-up-delay-400 flex flex-col gap-12 sm:flex-row">
+            <div>
+              <div className="font-mono text-[64px] leading-[1.2] font-medium bg-gradient-to-r from-[#2DD4BF] to-primary-60 bg-clip-text text-transparent">
+                84%
+              </div>
+              <div className="mt-3 text-[16px] font-sans text-neutral-400">Adoption Rate</div>
+            </div>
+            <div>
+              <div className="font-mono text-[64px] leading-[1.2] font-medium bg-gradient-to-r from-[#2DD4BF] to-primary-60 bg-clip-text text-transparent">
+                40%
+              </div>
+              <div className="mt-3 text-[16px] font-sans text-neutral-400">Efficiency Gains</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column - Mockup Full Bleed with Right Shift */}
+        <div className="relative z-10 mt-16 lg:mt-0 col-span-1 lg:col-start-8 lg:col-span-5 pr-0 overflow-hidden sm:overflow-visible">
+          <div className="relative opacity-0 translate-x-12 animate-slide-in-right animate-fade-up-delay-600">
+            {/* Top Card - Prompt */}
+            <div className="rounded-xl border border-neutral-700 bg-[#111111] p-6">
+              <p className="text-[14px] leading-7 text-neutral-400 font-sans">
+                Generate a responsive navigation bar using HTML, CSS, and JavaScript that matches the provided UI specification and design tokens.
+              </p>
+            </div>
+
+            {/* Bottom Layout - File Explorer + Code Editor */}
+            <div className="mt-4 flex flex-col gap-4 lg:flex-row">
+              {/* Left Card - File Explorer */}
+              <div className="w-full rounded-xl border border-neutral-700 bg-[#111111] p-5 lg:w-1/3">
+                <div className="mb-4 flex items-center gap-2 text-[14px] font-sans text-white">
+                  <Folder className="h-4 w-4 text-primary-60" />
+                  <span>website</span>
+                </div>
+                <ul className="space-y-3 text-[14px] font-sans text-white">
+                  <li className="flex items-center gap-2 text-neutral-400">
+                    <ChevronRight className="h-3.5 w-3.5" /> Feature
+                  </li>
+                  <li className="flex items-center gap-2 text-neutral-400">
+                    <ChevronRight className="h-3.5 w-3.5" /> add-ons
+                  </li>
+                  <li className="flex items-center gap-2 text-neutral-400">
+                    <ChevronRight className="h-3.5 w-3.5" /> helpers
+                  </li>
+                  <li className="mt-4 flex items-center gap-2 text-white">
+                    <Folder className="h-3.5 w-3.5 text-primary-60" /> http
+                  </li>
+                  <li className="ml-6 flex items-center gap-2 text-neutral-400">
+                    <ChevronRight className="h-3.5 w-3.5" /> Javascript
+                  </li>
+                  <li className="ml-10 flex items-center gap-2 text-white">
+                    <ChevronRight className="h-3.5 w-3.5" /> Navbar.php
+                  </li>
+                  <li className="ml-10 flex items-center gap-2 text-white">
+                    <ChevronRight className="h-3.5 w-3.5" /> Login.php
+                  </li>
+                </ul>
+              </div>
+
+              {/* Right Card - PHP Code Editor */}
+              <div className="w-full rounded-xl border border-neutral-700 bg-[#111111] p-5 lg:w-2/3">
+                <div className="mb-4 flex items-center gap-3 text-[14px] text-neutral-400">
+                  <span className="inline-flex h-2.5 w-2.5 rounded-full bg-primary-60" />
+                  <span>PHP / Blade</span>
+                </div>
+                <div className="grid grid-cols-[32px_1fr] gap-4 text-[14px] leading-relaxed">
+                  {/* Line Numbers */}
+                  <div className="space-y-1 text-right text-neutral-500">
+                    {Array.from({ length: 12 }, (_, index) => (
+                      <div key={index}>{index + 1}</div>
+                    ))}
+                  </div>
+
+                  {/* Code */}
+                  <div className="space-y-1 font-mono text-[14px] leading-relaxed text-white">
+                    <div>
+                      <span className="text-primary-60">&lt;?php</span>
+                    </div>
+                    <div className="h-1" />
+                    <div>
+                      <span className="text-primary-60">namespace</span>{' '}
+                      <span className="text-white">App\Http\Navbar;</span>
+                    </div>
+                    <div className="h-1" />
+                    <div>
+                      <span className="text-primary-60">class</span>{' '}
+                      <span className="text-white">ReportController</span>{' '}
+                      <span className="text-primary-60">extends</span>{' '}
+                      <span className="text-white">Controller</span>
+                    </div>
+                    <div>{'{'}</div>
+                    <div className="pl-4">
+                      <span className="text-primary-60">public</span>{' '}
+                      <span className="text-primary-60">function</span>{' '}
+                      <span className="text-white">render()</span>
+                    </div>
+                    <div className="pl-4">{'{'}</div>
+                    <div className="pl-8">
+                      <span className="text-primary-60">return</span>{' '}
+                      <span className="text-white">view('navbar');</span>
+                    </div>
+                    <div className="pl-4">{'}'}</div>
+                    <div>{'}'}</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -322,64 +429,113 @@ function Hero() {
         </div>
       </section>
 
-      <section
-        className="pricing-section"
-        id="pricing"
-        aria-labelledby="pricing-title"
-      >
-        <div className="landing-container pricing-section__intro">
-          <h2 className="section-title font-mono text-[40px] sm:text-[48px] text-white" id="pricing-title" data-reveal="up">
-            Unlock the Power
-            <br />
-            of <span className="text-gradient-primary">AI with Woof</span>
-          </h2>
-          <p className="section-copy">
-            We offer tailored pricing plans designed to meet the unique needs of
-            your business.
-          </p>
-        </div>
+      <section className="relative z-20 w-full bg-natural-100 py-24 lg:py-28" id="pricing">
+        <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16">
+          <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
+            <h2 className="font-mono text-[48px] leading-[1.03] font-normal text-white sm:text-[56px] lg:text-[64px]">
+              Unlock the Power of AI with Woof
+            </h2>
+            <p className="max-w-xl font-sans text-[17px] leading-8 text-natural-70">
+              We offer tailored pricing plans designed to meet the unique needs of your business.
+            </p>
+          </div>
 
-        <div className="landing-container pricing-section__plans">
-          {planCards.map((plan, index) => (
-            <article
-              className={`plan-card${plan.popular ? ' plan-card--popular' : ''}`} data-reveal="up"
-              key={plan.name}
-              style={{ '--reveal-delay': `${index * 100}ms` }}
-            >
-              {plan.popular && (
-                <span className="plan-card__badge">Most Popular</span>
-              )}
-              <div className="plan-card__header">
+          <div className="grid grid-cols-1 gap-8 mt-16 lg:grid-cols-2 lg:gap-10">
+            {/* Basic Plan Card */}
+            <div className="pricing-card relative rounded-[1.75rem] bg-gradient-to-r from-[#2DD4BF] to-[#bfff00] p-[1px] shadow-2xl mt-4 lg:mt-0">
+              <span className="absolute left-8 -top-4 z-10 rounded-md bg-gradient-to-r from-[#2DD4BF] to-[#bfff00] px-3 py-1.5 text-[14px] font-semibold text-black shadow-sm">
+                Most Popular
+              </span>
+              <div className="relative flex h-full flex-col justify-between rounded-[calc(1.75rem-1px)] bg-[#0a0a0a] p-8 sm:p-10">
                 <div>
-                  <h3>{plan.name}</h3>
-                  <p>{plan.subtitle}</p>
+                  <div className="flex items-start justify-between">
+                    <div className="pt-2">
+                      <h3 className="font-sans text-[28px] text-white">Basic Plan</h3>
+                      <p className="mt-2 font-sans text-[14px] text-natural-70">The Basic Plan is designed for small.</p>
+                    </div>
+                    <div className="flex items-start gap-1">
+                      <span className="mt-2 font-mono text-[20px] font-medium text-natural-70">$</span>
+                      <span className="font-mono text-[64px] leading-[1] font-medium text-white">599</span>
+                      <span className="self-end pb-2 font-mono text-[15px] text-natural-70">/mo</span>
+                    </div>
+                  </div>
+
+                  <div className="mt-12">
+                    <h4 className="font-sans text-[18px] text-white">Features</h4>
+                    <p className="mt-2 font-sans text-[14px] text-natural-70">Everything in our basic plan....</p>
+                    <ul className="mt-6 space-y-5">
+                      {[
+                        '20 hours of consultation',
+                        'Access to the AI Learning Portal',
+                        'Monthly performance reporting',
+                        'Email support',
+                        'AI Readiness Assessment',
+                      ].map((item) => (
+                        <li key={item} className="flex items-center gap-4">
+                          <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-[#bfff00] to-[#2DD4BF] text-black">
+                            <svg className="h-3 w-3" viewBox="0 0 14 10" fill="none">
+                              <path d="M1 5L4.5 8.5L13 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                          </span>
+                          <span className="font-sans text-[15px] text-[#e5e5e5]">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <div
-                  className="plan-card__price"
-                  aria-label={`$${plan.price} per month`}
-                >
-                  <span>$</span>
-                  <span className={!plan.popular ? 'text-gradient-primary' : ''}>{plan.price}</span>
-                  <small>/mo</small>
+
+                <button className="mt-12 w-full rounded-xl bg-[#bfff00] py-4 text-[16px] font-medium text-black transition-transform duration-200 hover:scale-[1.02]">
+                  Get This Plan
+                </button>
+              </div>
+            </div>
+
+            {/* Premium Plan Card */}
+            <div className="pricing-card relative rounded-[1.75rem] bg-gradient-to-r from-[#2DD4BF] to-[#bfff00] p-[1px] shadow-2xl mt-4 lg:mt-0" style={{ '--reveal-delay': '200ms' }}>
+              <div className="relative flex h-full flex-col justify-between rounded-[calc(1.75rem-1px)] bg-[#0a0a0a] p-8 sm:p-10">
+                <div>
+                  <div className="flex items-start justify-between">
+                    <div className="pt-2">
+                      <h3 className="font-sans text-[28px] text-white">Premium Plan</h3>
+                      <p className="mt-2 font-sans text-[14px] text-natural-70">Perfect for organizations</p>
+                    </div>
+                    <div className="flex items-start gap-1">
+                      <span className="mt-2 font-mono text-[20px] font-medium text-natural-70">$</span>
+                      <span className="font-mono text-[64px] leading-[1] font-medium bg-gradient-to-r from-[#bfff00] to-[#2DD4BF] bg-clip-text text-transparent">699</span>
+                      <span className="self-end pb-2 font-mono text-[15px] text-natural-70">/mo</span>
+                    </div>
+                  </div>
+
+                  <div className="mt-12">
+                    <h4 className="font-sans text-[18px] text-white">Features</h4>
+                    <p className="mt-2 font-sans text-[14px] text-natural-70">Everything in our premium plan....</p>
+                    <ul className="mt-6 space-y-5">
+                      {[
+                        '40 hours of consultation',
+                        'Comprehensive machine learning',
+                        'AI training and workshops',
+                        'Advanced analytics and insights',
+                        'Priority support',
+                      ].map((item) => (
+                        <li key={item} className="flex items-center gap-4">
+                          <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-[#bfff00] to-[#2DD4BF] text-black">
+                            <svg className="h-3 w-3" viewBox="0 0 14 10" fill="none">
+                              <path d="M1 5L4.5 8.5L13 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                          </span>
+                          <span className="font-sans text-[15px] text-[#e5e5e5]">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
+
+                <button className="mt-12 w-full rounded-xl bg-[#bfff00] py-4 text-[16px] font-medium text-black transition-transform duration-200 hover:scale-[1.02]">
+                  Get This Plan
+                </button>
               </div>
-              <div className="plan-card__features-heading">
-                <span>Features</span>
-                <p>Everything in our basic plan...</p>
-              </div>
-              <ul className="plan-card__features">
-                {plan.features.map((feature) => (
-                  <li key={feature}>
-                    <CheckIcon isGradient={!plan.popular} />
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <button className="button-primary plan-card__button" type="button">
-                Get This Plan
-              </button>
-            </article>
-          ))}
+            </div>
+          </div>
         </div>
       </section>
     </>

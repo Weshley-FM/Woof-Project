@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer.jsx';
-import Navbar from '../../components/Navbar/Navbar.jsx';
 import logo from '../../assets/logo.svg';
 
 export default function Login() {
@@ -9,7 +8,6 @@ export default function Login() {
 
   return (
     <>
-      <Navbar />
       <main className="app-content relative z-10 pb-24 pt-16 lg:pb-32 lg:pt-20">
         <div className="w-full flex flex-col font-sans text-white">
           <div className="flex-1 flex items-center justify-center p-6 md:p-12">
