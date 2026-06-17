@@ -6,16 +6,18 @@
 }
 
 .features-hero .section-title {
+  font-family: 'Space Mono', monospace;
   font-size: 64px;
   line-height: 1.12;
   margin-bottom: 32px;
 }
 
 .features-hero .section-copy {
-  font-size: 14px;
+  font-size: 22px;
   line-height: 1.65;
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .features-section {
@@ -28,7 +30,7 @@
 }
 
 .features-section-title {
-  font-family: var(--font-display);
+  font-family: 'Space Mono', monospace;
   font-size: 48px;
   font-weight: 500;
   line-height: 1.24;
@@ -37,7 +39,7 @@
 }
 
 .features-section-desc {
-  color: var(--color-neutral-60);
+  color: rgba(255, 255, 255, 0.65);
   font-size: 14px;
   line-height: 1.6;
   margin-bottom: 32px;
@@ -53,7 +55,7 @@
   position: relative;
   padding-left: 16px;
   margin-bottom: 12px;
-  color: var(--color-neutral-50);
+  color: rgba(255, 255, 255, 0.65);
   font-size: 13px;
   line-height: 1.5;
 }
@@ -96,7 +98,7 @@
 
 .features-prompt-title {
   font-size: 13px;
-  color: var(--color-neutral-30);
+  color: rgba(255, 255, 255, 0.65);
   margin-bottom: 12px;
 }
 
@@ -138,7 +140,7 @@
 }
 
 .checkmark-card p {
-  color: var(--color-neutral-50);
+  color: rgba(255, 255, 255, 0.65);
   font-size: 13px;
   line-height: 1.6;
   margin: 0;
@@ -152,7 +154,7 @@
 }
 .diff-label {
   font-size: 14px;
-  color: var(--color-neutral-10);
+  color: rgba(255, 255, 255, 0.65);
   font-weight: 500;
 }
 

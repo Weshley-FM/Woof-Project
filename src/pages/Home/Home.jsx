@@ -69,7 +69,7 @@ export default function MainPage() {
         {/* Left Column - Content */}
         <section className="relative z-10 col-span-1 lg:col-span-5 px-6 sm:px-10 lg:px-0 lg:pl-[max(4rem,calc(50vw-576px+4rem))]">
           {/* Headline - Two perfect lines */}
-          <div className="opacity-0 translate-y-8 animate-fade-up font-mono text-[44px] sm:text-[56px] lg:text-[70px] leading-[1.1] font-normal text-natural-10">
+          <div className="opacity-0 translate-y-8 animate-fade-up font-mono text-[44px] sm:text-[56px] lg:text-[70px] leading-[1.1] font-normal text-natural-10 whitespace-nowrap">
             <div>Code Faster,</div>
             <div>Debug Smarter.</div>
           </div>
@@ -590,7 +590,7 @@ export default function MainPage() {
                     </div>
                     <div className="flex items-start gap-1">
                       <span className="mt-2 font-mono text-[20px] font-medium text-natural-70">$</span>
-                      <span className="font-mono text-[64px] leading-[1] font-medium bg-gradient-to-r from-[#bfff00] to-[#2DD4BF] bg-clip-text text-transparent">599</span>
+                      <span className="font-mono text-[64px] leading-[1] font-medium text-white">599</span>
                       <span className="self-end pb-2 font-mono text-[15px] text-natural-70">/mo</span>
                     </div>
                   </div>
