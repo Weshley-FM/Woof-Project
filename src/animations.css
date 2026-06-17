@@ -1,0 +1,35 @@
+@keyframes float-slow {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes float-slower {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0px rgba(200, 253, 38, 0); }
+  50% { box-shadow: 0 0 16px rgba(200, 253, 38, 0.3); }
+  100% { box-shadow: 0 0 0px rgba(200, 253, 38, 0); }
+}
+
+@keyframes spin-slow {
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spin-slow-reverse {
+  100% { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+@keyframes spin-slow-reverse-center {
+  100% { transform: rotate(-360deg); }
+}
+
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

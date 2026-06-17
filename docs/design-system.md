@@ -12,6 +12,8 @@ This guide is the project source of truth for UI styling. Future screens, compon
 
 ![Text fields](assets/design-system/text-field.png)
 
+![Footer](assets/design-system/footer.png)
+
 ## Core Direction
 
 - Use a clean, high-contrast interface with bright lime as the primary interactive color.
@@ -144,6 +146,16 @@ Use `Space Mono` for large display headings and `Inter` for app headings, body c
 - Place the icon at the right edge inside the field.
 - Icon color: `neutral-80`
 - Keep the icon subtle and functional, such as password visibility.
+
+## Footer
+
+- Use `neutral-100` as the full footer background.
+- Use `neutral-10` for the main heading, newsletter heading, input text, and social icons.
+- Use `neutral-60` and `neutral-70` for secondary copy, contact text, social labels, and copyright text.
+- Use `primary-60` for the newsletter submit button, location/phone icons, and the bottom divider accent.
+- Footer content should sit in a centered max-width container and remain split into left content and right description/contact columns on desktop.
+- Newsletter form follows the project text-field shape with a dark transparent field, `neutral-60` border, and an inset primary CTA button.
+- Footer appears at the bottom of every page and should be reused as a shared component, not recreated per page.
 
 ## Implementation Notes
 

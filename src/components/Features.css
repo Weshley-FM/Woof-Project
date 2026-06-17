@@ -1,0 +1,194 @@
+
+
+.features-hero {
+  text-align: center;
+  padding: 120px 0 160px;
+}
+
+.features-hero .section-title {
+  font-size: 64px;
+  line-height: 1.12;
+  margin-bottom: 32px;
+}
+
+.features-hero .section-copy {
+  font-size: 14px;
+  line-height: 1.65;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.features-section {
+  width: min(1140px, calc(100% - 48px));
+  margin: 0 auto 160px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.features-section-title {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.24;
+  margin-bottom: 24px;
+  color: var(--color-neutral-10);
+}
+
+.features-section-desc {
+  color: var(--color-neutral-60);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.features-list li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 12px;
+  color: var(--color-neutral-50);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.features-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--color-neutral-50);
+}
+
+.features-visual {
+  position: relative;
+  display: grid;
+  gap: 16px;
+}
+
+.features-visual-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Feature Specific Tweaks */
+.features-section--reverse {
+  grid-template-columns: 1fr 1fr;
+}
+.features-section--reverse .features-text {
+  grid-column: 2;
+  grid-row: 1;
+}
+.features-section--reverse .features-visual {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.features-prompt-title {
+  font-size: 13px;
+  color: var(--color-neutral-30);
+  margin-bottom: 12px;
+}
+
+/* Big Checkmark Card */
+.checkmark-card {
+  background: rgba(30, 30, 36, 0.65);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(74, 74, 80, 0.4);
+  border-radius: var(--radius-small);
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.checkmark-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(200, 253, 38, 0.15);
+}
+
+.checkmark-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 4px solid var(--color-primary-60);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.checkmark-circle svg {
+  width: 40px;
+  height: 40px;
+  color: var(--color-primary-60);
+}
+
+.checkmark-card p {
+  color: var(--color-neutral-50);
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Code card line highlights */
+.code-card-diff {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.diff-label {
+  font-size: 14px;
+  color: var(--color-neutral-10);
+  font-weight: 500;
+}
+
+.code-card-row-red {
+  background-color: rgba(220, 38, 38, 0.2);
+  margin: 0 -12px;
+  padding: 0 12px;
+  box-shadow: inset 0 0 12px rgba(220, 38, 38, 0.3);
+}
+
+.code-card-row-green {
+  background-color: rgba(37, 229, 154, 0.15);
+  margin: 0 -12px;
+  padding: 0 12px;
+  box-shadow: inset 0 0 12px rgba(37, 229, 154, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .features-section,
+  .features-section--reverse {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .features-section--reverse .features-text {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .features-section--reverse .features-visual {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .features-visual-grid {
+    grid-template-columns: 1fr;
+  }
+}
