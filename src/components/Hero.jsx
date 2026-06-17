@@ -140,7 +140,7 @@ function Hero() {
             <h1 className="hero__heading font-mono text-[56px] leading-[1.05] sm:text-[64px] lg:text-[72px] text-white">
               Code Faster,
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-primary-60">Debug Smarter.</span>
+              <span className="text-gradient-primary">Debug Smarter.</span>
             </h1>
             <p className="hero__description font-sans text-[17px] text-neutral-400">
               Your AI-powered pair programmer. Generate functions, fix bugs, and
@@ -331,7 +331,7 @@ function Hero() {
           <h2 className="section-title font-mono text-[40px] sm:text-[48px] text-white" id="pricing-title" data-reveal="up">
             Unlock the Power
             <br />
-            of <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-primary-60">AI with Woof</span>
+            of <span className="text-gradient-primary">AI with Woof</span>
           </h2>
           <p className="section-copy">
             We offer tailored pricing plans designed to meet the unique needs of
