@@ -1,6 +1,6 @@
 import React from 'react';
-import Footer from './Footer.jsx';
-import Navbar from './Navbar.jsx';
+import Footer from '../../components/Footer/Footer.jsx';
+import Navbar from '../../components/Navbar/Navbar.jsx';
 
 export default function DocumentationPage() {
   return (

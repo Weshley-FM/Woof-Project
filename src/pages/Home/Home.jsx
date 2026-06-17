@@ -1,6 +1,6 @@
-import Navbar from './Navbar.jsx'
+import Navbar from '../../components/Navbar/Navbar.jsx'
 import Hero from './Hero.jsx'
-import Footer from './Footer.jsx'
+import Footer from '../../components/Footer/Footer.jsx'
 
 export default function Home() {
   return (

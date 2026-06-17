@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './SplashScreen.css'
-import logo from '../assets/logo.svg'
+import logo from '../../assets/logo.svg'
 
 const LOADING_TEXTS = [
   'Preparing your workspace...',
