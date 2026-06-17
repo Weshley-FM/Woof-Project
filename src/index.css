@@ -447,93 +447,124 @@
     box-shadow: 0 28px 90px rgba(0, 0, 0, 0.48), 0 0 52px rgba(45, 212, 191, 0.12);
   }
 
-  @supports (animation-timeline: view()) {
-    .section-reveal {
-      animation: sectionRise both cubic-bezier(0.16, 1, 0.3, 1);
-      animation-timeline: view();
-      animation-range: entry 4% cover 34%;
-    }
+  .section-reveal {
+    /* Base wrapper - children handle animations */
+  }
 
-    .hero-reveal {
-      animation-range: entry 0% cover 24%;
-    }
+  /* 1. Languages Reveal - Smooth Staggered */
+  .languages-reveal h2 {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .languages-reveal .language-icon {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .languages-reveal .language-icon:nth-child(1) { transition-delay: 0.1s; }
+  .languages-reveal .language-icon:nth-child(2) { transition-delay: 0.15s; }
+  .languages-reveal .language-icon:nth-child(3) { transition-delay: 0.2s; }
+  .languages-reveal .language-icon:nth-child(4) { transition-delay: 0.25s; }
+  .languages-reveal .language-icon:nth-child(5) { transition-delay: 0.3s; }
 
-    .languages-reveal {
-      animation-name: sectionZoom;
-      animation-range: entry 8% cover 38%;
-    }
+  .languages-reveal.js-reveal-active h2,
+  .languages-reveal.js-reveal-active .language-icon {
+    opacity: 1;
+    transform: translate(0);
+  }
 
-    .why-reveal {
-      animation-name: sectionSlideLeft;
-      animation-range: entry 8% cover 36%;
-    }
+  /* 2. Why Us - Smooth Fade Up */
+  .why-reveal h2, .why-reveal p {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+  }
+  .why-reveal p { transition-delay: 0.1s; }
+  .why-reveal .motion-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+  }
+  .why-reveal .graph-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+  }
 
-    .process-reveal {
-      animation-name: sectionSlideRight;
-      animation-range: entry 8% cover 36%;
-    }
+  .why-reveal.js-reveal-active h2,
+  .why-reveal.js-reveal-active p,
+  .why-reveal.js-reveal-active .motion-card,
+  .why-reveal.js-reveal-active .graph-card {
+    opacity: 1;
+    transform: translate(0);
+  }
 
-    .integrations-reveal {
-      animation-name: sectionZoom;
-      animation-range: entry 10% cover 40%;
-    }
+  /* 3. Process Reveal - Staggered */
+  .process-reveal h2, .process-reveal p {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .process-reveal .space-y-5 > div {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .process-reveal .space-y-5 > div:nth-child(1) { transition-delay: 0.1s; }
+  .process-reveal .space-y-5 > div:nth-child(2) { transition-delay: 0.2s; }
+  .process-reveal .space-y-5 > div:nth-child(3) { transition-delay: 0.3s; }
 
-    .pricing-reveal {
-      animation-name: sectionRise;
-      animation-range: entry 10% cover 38%;
-    }
+  .process-reveal.js-reveal-active h2,
+  .process-reveal.js-reveal-active p,
+  .process-reveal.js-reveal-active .space-y-5 > div {
+    opacity: 1;
+    transform: translate(0);
+  }
 
-    .language-icon {
-      animation: iconBloom both cubic-bezier(0.16, 1, 0.3, 1);
-      animation-timeline: view();
-      animation-range: entry 16% cover 30%;
-    }
+  /* 4. Integrations Reveal - Zoom in spin */
+  .integrations-reveal h2, .integrations-reveal p {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .integrations-reveal .integration-icon {
+    opacity: 0;
+    transform: scale(0.2) rotate(-90deg);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .integrations-reveal .integration-icon:nth-child(1) { transition-delay: 0.1s; }
+  .integrations-reveal .integration-icon:nth-child(2) { transition-delay: 0.2s; }
+  .integrations-reveal .integration-icon:nth-child(3) { transition-delay: 0.3s; }
+  .integrations-reveal .integration-icon:nth-child(4) { transition-delay: 0.4s; }
 
-    .language-icon:nth-child(2) {
-      animation-range: entry 18% cover 32%;
-    }
+  .integrations-reveal.js-reveal-active h2,
+  .integrations-reveal.js-reveal-active p,
+  .integrations-reveal.js-reveal-active .integration-icon {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
 
-    .language-icon:nth-child(3) {
-      animation-range: entry 20% cover 34%;
-    }
+  /* 5. Pricing Reveal - Float up */
+  .pricing-reveal h2, .pricing-reveal p {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+  }
+  .pricing-reveal .pricing-card {
+    opacity: 0;
+    transform: translateY(80px);
+    transition: all 0.8s ease-out 0.2s;
+  }
+  .pricing-reveal .pricing-card:nth-child(2) {
+    transition-delay: 0.4s;
+  }
 
-    .language-icon:nth-child(4) {
-      animation-range: entry 22% cover 36%;
-    }
-
-    .language-icon:nth-child(5) {
-      animation-range: entry 24% cover 38%;
-    }
-
-    .language-icon:nth-child(6) {
-      animation-range: entry 26% cover 40%;
-    }
-
-    .motion-card {
-      animation: cardLift both cubic-bezier(0.16, 1, 0.3, 1);
-      animation-timeline: view();
-      animation-range: entry 10% cover 32%;
-    }
-
-    .process-step {
-      animation: processStep both cubic-bezier(0.16, 1, 0.3, 1);
-      animation-timeline: view();
-      animation-range: entry 10% cover 28%;
-    }
-
-    .process-step:nth-child(2) {
-      animation-range: entry 14% cover 32%;
-    }
-
-    .process-step:nth-child(3) {
-      animation-range: entry 18% cover 36%;
-    }
-
-    .pricing-card {
-      animation: pricingGlow both cubic-bezier(0.16, 1, 0.3, 1);
-      animation-timeline: view();
-      animation-range: entry 12% cover 34%;
-    }
+  .pricing-reveal.js-reveal-active h2,
+  .pricing-reveal.js-reveal-active p,
+  .pricing-reveal.js-reveal-active .pricing-card {
+    opacity: 1;
+    transform: translate(0);
   }
 
   @media (prefers-reduced-motion: reduce) {

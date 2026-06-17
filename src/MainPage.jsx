@@ -1,36 +1,64 @@
+import React, { useEffect, useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Bug, ChevronRight, Code2, Copy, Folder, Play, Sparkles } from 'lucide-react'
 import logoProduct from './assets/Logo.png'
 import Footer from './Footer'
+import Navbar from './Navbar'
 
 export default function MainPage() {
+  const [showSplash, setShowSplash] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowSplash(false), 1400)
+    return () => clearTimeout(timer)
+  }, [])
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('js-reveal-active')
+          } else {
+            entry.target.classList.remove('js-reveal-active')
+          }
+        })
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    )
+
+    document.querySelectorAll('.section-reveal').forEach((el) => {
+      observer.observe(el)
+    })
+
+    return () => observer.disconnect()
+  }, [])
   return (
     <div className="relative min-h-screen overflow-hidden bg-natural-100 text-natural-10 font-sans">
-      <div className="pointer-events-none fixed inset-0 z-[60] flex items-center justify-center bg-natural-100 animate-splash-screen">
-        <div className="relative flex h-28 w-28 items-center justify-center">
-          <span className="absolute inset-0 rounded-full border border-primary-60/30 animate-splash-ring" />
-          <span className="absolute inset-4 rounded-full border border-[#2DD4BF]/20 animate-splash-ring-delay" />
-          <img src={logoProduct} alt="Logo" className="relative h-8 w-auto animate-splash-logo" />
-        </div>
-      </div>
+      <AnimatePresence>
+        {showSplash && (
+          <motion.div
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            className="fixed inset-0 z-[60] flex items-center justify-center bg-natural-100"
+          >
+            <div className="relative flex h-28 w-28 items-center justify-center">
+              <span className="absolute inset-0 rounded-full border border-primary-60/30 animate-splash-ring" />
+              <span className="absolute inset-4 rounded-full border border-[#2DD4BF]/20 animate-splash-ring-delay" />
+              <motion.img
+                layoutId="main-logo"
+                src={logoProduct}
+                alt="Logo"
+                className="relative h-8 w-auto"
+                transition={{ type: "spring", bounce: 0, duration: 0.8 }}
+              />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-      {/* Navbar */}
-      <nav className="relative z-30 mx-auto flex w-full max-w-6xl items-center justify-between px-16 py-6">
-        <div className="flex items-center gap-3">
-          <img src={logoProduct} alt="Logo" className="h-6 w-auto block" />
-        </div>
-
-        <div className="hidden items-center gap-10 font-sans text-[16px] text-natural-70 md:flex">
-          {['Home', 'Features', 'Pricing', 'Integration', 'Documentation'].map((item) => (
-            <a key={item} href={`#${item.toLowerCase()}`} className="transition-colors hover:text-natural-10">
-              {item}
-            </a>
-          ))}
-        </div>
-
-        <button className="rounded-lg bg-[#bfff00] px-6 py-2 text-[16px] font-medium text-black font-sans">
-          Get Started
-        </button>
-      </nav>
+      <Navbar showLogo={!showSplash} />
 
       {/* Hero Section */}
       <main className="section-reveal hero-reveal relative z-0 grid grid-cols-1 gap-0 overflow-visible pb-10 pt-10 lg:min-h-[640px] lg:grid-cols-12">
@@ -41,9 +69,9 @@ export default function MainPage() {
         {/* Left Column - Content */}
         <section className="relative z-10 col-span-1 lg:col-span-5 px-6 sm:px-10 lg:px-0 lg:pl-[max(4rem,calc(50vw-576px+4rem))]">
           {/* Headline - Two perfect lines */}
-          <div className="opacity-0 translate-y-8 animate-fade-up font-mono text-[70px] leading-[1.1] font-normal text-natural-10">
-            <div className="whitespace-nowrap">Code Faster,</div>
-            <div className="whitespace-nowrap">Debug Smarter.</div>
+          <div className="opacity-0 translate-y-8 animate-fade-up font-mono text-[44px] sm:text-[56px] lg:text-[70px] leading-[1.1] font-normal text-natural-10">
+            <div>Code Faster,</div>
+            <div>Debug Smarter.</div>
           </div>
 
           {/* Subheadline */}
@@ -84,7 +112,7 @@ export default function MainPage() {
         </section>
 
         {/* Right Column - Mockup Full Bleed with Right Shift */}
-        <section className="relative z-10 col-start-8 col-span-5 pr-0">
+        <section className="relative z-10 mt-16 lg:mt-0 col-span-1 lg:col-start-8 lg:col-span-5 pr-0 overflow-hidden sm:overflow-visible">
           <div className="relative opacity-0 translate-x-12 animate-slide-in-right animate-fade-up-delay-600">
             {/* Top Card - Prompt */}
             <div className="rounded-xl border border-natural-70/20 bg-[#111111] p-6">
@@ -181,7 +209,7 @@ export default function MainPage() {
       {/* Supported Languages Section */}
       <section className="section-reveal languages-reveal relative z-20 w-full bg-natural-100 pt-16 pb-32">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-center px-6 sm:px-10 lg:px-16">
-          <h2 className="font-mono text-[64px] leading-[1.05] font-normal text-natural-10">
+          <h2 className="font-mono text-[40px] sm:text-[52px] lg:text-[64px] leading-[1.05] font-normal text-natural-10 text-center">
             Supported Languages
           </h2>
 
@@ -229,7 +257,7 @@ export default function MainPage() {
       <section className="section-reveal why-reveal relative z-20 w-full bg-natural-100 pb-24 pt-20 lg:pb-32 lg:pt-24">
         <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16">
           <div className="grid gap-8 lg:grid-cols-[1fr_420px] lg:items-end">
-            <h2 className="font-mono text-[52px] leading-[1.05] font-normal text-natural-10 sm:text-[64px]">
+            <h2 className="font-mono text-[40px] sm:text-[52px] lg:text-[64px] leading-[1.05] font-normal text-natural-10">
               Why Us?
             </h2>
             <p className="max-w-[430px] font-sans text-[17px] leading-8 text-natural-70 lg:justify-self-end">
@@ -319,15 +347,15 @@ export default function MainPage() {
                 Expert guidance to help you plan, implement, and maximize AI-driven content workflows.
               </p>
 
-              <div className="mt-12 flex gap-16">
+              <div className="mt-12 flex flex-col sm:flex-row gap-8 sm:gap-16">
                 <div>
-                  <div className="font-sans text-[56px] font-medium text-[#2DD4BF]">
+                  <div className="font-sans text-[40px] sm:text-[56px] font-medium text-[#2DD4BF]">
                     84%
                   </div>
                   <div className="mt-2 font-sans text-[16px] text-natural-70">Adoption Rate</div>
                 </div>
                 <div>
-                  <div className="font-sans text-[56px] font-medium text-[#bfff00]">
+                  <div className="font-sans text-[40px] sm:text-[56px] font-medium text-[#bfff00]">
                     40%
                   </div>
                   <div className="mt-2 font-sans text-[16px] text-natural-70">Efficiency Gains</div>
@@ -342,7 +370,7 @@ export default function MainPage() {
       <section className="section-reveal process-reveal relative z-20 w-full overflow-hidden bg-natural-100 py-24 lg:py-32">
         <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16">
           <div className="grid gap-8 lg:grid-cols-[1fr_430px] lg:items-end">
-            <h2 className="font-mono text-[52px] leading-[1.05] font-normal text-natural-10 sm:text-[64px]">
+            <h2 className="font-mono text-[40px] sm:text-[52px] lg:text-[64px] leading-[1.05] font-normal text-natural-10">
               How it Works
             </h2>
             <p className="max-w-[430px] font-sans text-[17px] leading-8 text-natural-70 lg:justify-self-end">
