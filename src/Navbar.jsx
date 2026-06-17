@@ -24,17 +24,16 @@ export default function Navbar({ showLogo = true }) {
         {/* Desktop Menu */}
         <div className="hidden items-center gap-10 font-sans text-[16px] md:flex">
           <Link to="/" className={`transition-colors hover:text-white ${location.pathname === '/' ? 'text-white font-medium' : 'text-natural-70'}`}>Home</Link>
-          <a href="/#features" className="text-natural-70 transition-colors hover:text-white">Features</a>
+          <Link to="/features" className={`transition-colors hover:text-white ${location.pathname === '/features' ? 'text-white font-medium' : 'text-natural-70'}`}>Features</Link>
           <Link to="/pricing" className={`transition-colors hover:text-white ${location.pathname === '/pricing' ? 'text-white font-medium' : 'text-natural-70'}`}>Pricing</Link>
-          <a href="/#integration" className="text-natural-70 transition-colors hover:text-white">Integration</a>
+          <Link to="/integrations" className={`transition-colors hover:text-white ${location.pathname === '/integrations' ? 'text-white font-medium' : 'text-natural-70'}`}>Integration</Link>
           <Link to="/documentation" className={`transition-colors hover:text-white ${location.pathname === '/documentation' ? 'text-white font-medium' : 'text-natural-70'}`}>Documentation</Link>
         </div>
 
         <div className="flex items-center gap-4">
-          <Link to="/register" className="hidden sm:flex rounded-lg bg-[#bfff00] px-6 py-2 text-[16px] font-medium text-black font-sans">
+          <Link to="/login" className="hidden sm:flex rounded-lg bg-[#bfff00] px-6 py-2 text-[16px] font-medium text-black font-sans hover:bg-[#bfff00]/90 transition-colors">
             Get Started
           </Link>
-          
           {/* Mobile Menu Button */}
           <button 
             className="md:hidden text-white focus:outline-none"
@@ -55,13 +54,15 @@ export default function Navbar({ showLogo = true }) {
       {isMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-[#0a0a0a] border-b border-white/10 p-6 flex flex-col gap-4 shadow-xl md:hidden">
           <Link to="/" onClick={() => setIsMenuOpen(false)} className={`transition-colors hover:text-white ${location.pathname === '/' ? 'text-white font-medium' : 'text-natural-70'}`}>Home</Link>
-          <a href="/#features" onClick={() => setIsMenuOpen(false)} className="text-natural-70 transition-colors hover:text-white">Features</a>
+          <Link to="/features" onClick={() => setIsMenuOpen(false)} className={`transition-colors hover:text-white ${location.pathname === '/features' ? 'text-white font-medium' : 'text-natural-70'}`}>Features</Link>
           <Link to="/pricing" onClick={() => setIsMenuOpen(false)} className={`transition-colors hover:text-white ${location.pathname === '/pricing' ? 'text-white font-medium' : 'text-natural-70'}`}>Pricing</Link>
-          <a href="/#integration" onClick={() => setIsMenuOpen(false)} className="text-natural-70 transition-colors hover:text-white">Integration</a>
+          <Link to="/integrations" onClick={() => setIsMenuOpen(false)} className={`transition-colors hover:text-white ${location.pathname === '/integrations' ? 'text-white font-medium' : 'text-natural-70'}`}>Integration</Link>
           <Link to="/documentation" onClick={() => setIsMenuOpen(false)} className={`transition-colors hover:text-white ${location.pathname === '/documentation' ? 'text-white font-medium' : 'text-natural-70'}`}>Documentation</Link>
-          <Link to="/register" onClick={() => setIsMenuOpen(false)} className="mt-4 rounded-lg bg-[#bfff00] px-6 py-3 text-center text-[16px] font-medium text-black font-sans w-full">
-            Get Started
-          </Link>
+          <div className="flex flex-col gap-3 mt-2">
+            <Link to="/login" onClick={() => setIsMenuOpen(false)} className="rounded-lg bg-[#bfff00] px-6 py-3 text-center text-[16px] font-medium text-black font-sans w-full hover:bg-[#bfff00]/90 transition-colors">
+              Get Started
+            </Link>
+          </div>
         </div>
       )}
     </nav>

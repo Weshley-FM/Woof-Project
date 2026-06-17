@@ -10,7 +10,7 @@ export default function RegisterPage() {
         
         {/* Left Column - Form */}
         <div className="flex-1 flex flex-col justify-center w-full lg:items-end">
-          <div className="w-full max-w-[480px]">
+          <div className="w-full max-w-[480px]" data-reveal="left">
           <h1 className="font-mono text-[40px] sm:text-[48px] lg:text-[56px] leading-[1.1] mb-4">
             Create<br />Your Account
           </h1>
@@ -94,15 +94,15 @@ export default function RegisterPage() {
             </button>
 
             <div className="text-center mt-4">
-              <span className="text-[14px] text-white/50">Didn't have an Account!? </span>
-              <Link to="/register" className="text-[14px] text-[#bfff00] hover:underline font-medium">Sign-Up</Link>
+              <span className="text-[14px] text-white/50">Already have an Account? </span>
+              <Link to="/login" className="text-[14px] text-[#bfff00] hover:underline font-medium">Sign-In</Link>
             </div>
           </form>
         </div>
       </div>
 
       {/* Right Column - Image/Gradient */}
-      <div className="hidden lg:flex flex-1 h-[700px] xl:h-[800px] w-full justify-start">
+      <div className="hidden lg:flex flex-1 h-[700px] xl:h-[800px] w-full justify-start" data-reveal="right" style={{ '--reveal-delay': '200ms' }}>
         <div className="w-full max-w-[480px] h-full rounded-[2.5rem] bg-gradient-to-br from-[#8DC63F] to-[#4F791A] relative overflow-hidden flex flex-col items-center justify-center text-center px-12 shadow-2xl">
           
           {/* Subtle pattern background */}

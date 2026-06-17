@@ -349,13 +349,13 @@ export default function MainPage() {
 
               <div className="mt-12 flex flex-col sm:flex-row gap-8 sm:gap-16">
                 <div>
-                  <div className="font-sans text-[40px] sm:text-[56px] font-medium text-[#2DD4BF]">
+                  <div className="font-sans text-[40px] sm:text-[56px] font-medium bg-gradient-to-r from-[#bfff00] to-[#2DD4BF] bg-clip-text text-transparent">
                     84%
                   </div>
                   <div className="mt-2 font-sans text-[16px] text-natural-70">Adoption Rate</div>
                 </div>
                 <div>
-                  <div className="font-sans text-[40px] sm:text-[56px] font-medium text-[#bfff00]">
+                  <div className="font-sans text-[40px] sm:text-[56px] font-medium bg-gradient-to-r from-[#bfff00] to-[#2DD4BF] bg-clip-text text-transparent">
                     40%
                   </div>
                   <div className="mt-2 font-sans text-[16px] text-natural-70">Efficiency Gains</div>
@@ -590,7 +590,7 @@ export default function MainPage() {
                     </div>
                     <div className="flex items-start gap-1">
                       <span className="mt-2 font-mono text-[20px] font-medium text-natural-70">$</span>
-                      <span className="font-mono text-[64px] leading-[1] font-medium text-white">599</span>
+                      <span className="font-mono text-[64px] leading-[1] font-medium bg-gradient-to-r from-[#bfff00] to-[#2DD4BF] bg-clip-text text-transparent">599</span>
                       <span className="self-end pb-2 font-mono text-[15px] text-natural-70">/mo</span>
                     </div>
                   </div>
@@ -607,7 +607,7 @@ export default function MainPage() {
                         'AI Readiness Assessment',
                       ].map((item) => (
                         <li key={item} className="flex items-center gap-4">
-                          <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#bfff00] text-black">
+                          <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-[#bfff00] to-[#2DD4BF] text-black">
                             <svg className="h-3 w-3" viewBox="0 0 14 10" fill="none">
                               <path d="M1 5L4.5 8.5L13 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
@@ -636,7 +636,7 @@ export default function MainPage() {
                     </div>
                     <div className="flex items-start gap-1">
                       <span className="mt-2 font-mono text-[20px] font-medium text-natural-70">$</span>
-                      <span className="font-mono text-[64px] leading-[1] font-medium text-[#2DD4BF]">699</span>
+                      <span className="font-mono text-[64px] leading-[1] font-medium bg-gradient-to-r from-[#bfff00] to-[#2DD4BF] bg-clip-text text-transparent">699</span>
                       <span className="self-end pb-2 font-mono text-[15px] text-natural-70">/mo</span>
                     </div>
                   </div>
@@ -653,7 +653,7 @@ export default function MainPage() {
                         'Priority support',
                       ].map((item) => (
                         <li key={item} className="flex items-center gap-4">
-                          <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#bfff00] text-black">
+                          <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-[#bfff00] to-[#2DD4BF] text-black">
                             <svg className="h-3 w-3" viewBox="0 0 14 10" fill="none">
                               <path d="M1 5L4.5 8.5L13 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
