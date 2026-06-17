@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Mono:wght@400;500&display=swap');
 @import './animations.css';
-:root {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
   --color-primary-10: #f4ffd4;
   --color-primary-20: #edfeb7;
   --color-primary-30: #e3fe92;
@@ -49,6 +54,7 @@ html {
 body {
   min-width: 320px;
   margin: 0;
+}
 }
 
 button,

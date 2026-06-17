@@ -137,12 +137,12 @@ function Hero() {
       <section className="hero" id="home">
         <div className="landing-container hero__inner">
           <div className="hero__content">
-            <h1 className="hero__heading">
+            <h1 className="hero__heading font-mono text-[56px] leading-[1.05] sm:text-[64px] lg:text-[72px] text-white">
               Code Faster,
               <br />
-              Debug Smarter.
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-primary-60">Debug Smarter.</span>
             </h1>
-            <p className="hero__description">
+            <p className="hero__description font-sans text-[17px] text-neutral-400">
               Your AI-powered pair programmer. Generate functions, fix bugs, and
               refactor code in seconds.
             </p>
@@ -175,7 +175,7 @@ function Hero() {
 
       <section className="language-section" aria-labelledby="languages-title">
         <div className="landing-container language-section__inner">
-          <h2 id="languages-title" data-reveal="up">
+          <h2 id="languages-title" data-reveal="up" className="font-mono text-[40px] sm:text-[48px] text-white mb-8">
             Supported Languages
           </h2>
           <div className="language-section__grid">
@@ -197,12 +197,12 @@ function Hero() {
       <section className="why-section" id="features" aria-labelledby="why-title">
         <div className="landing-container why-section__grid">
           <h2
-            className="section-title why-section__title"
+            className="section-title why-section__title font-mono text-[40px] sm:text-[48px] text-white"
             id="why-title"
            data-reveal="up">
             Why Us?
           </h2>
-          <p className="section-copy why-section__intro">
+          <p className="section-copy why-section__intro font-sans text-[17px] text-neutral-400">
             Your AI-powered pair programmer. Generate functions, fix bugs, and
             refactor code in seconds.
           </p>
@@ -246,12 +246,12 @@ function Hero() {
       >
         <div className="landing-container work-section__grid">
           <h2
-            className="section-title work-section__title"
+            className="section-title work-section__title font-mono text-[40px] sm:text-[48px] text-white"
             id="work-title"
            data-reveal="up">
             How it Works
           </h2>
-          <p className="section-copy work-section__intro">
+          <p className="section-copy work-section__intro font-sans text-[17px] text-neutral-400">
             Your AI-powered pair programmer. Generate functions, fix bugs, and
             refactor code in seconds.
           </p>
@@ -300,7 +300,7 @@ function Hero() {
         aria-labelledby="integrations-title"
       >
         <div className="landing-container integration-section__inner">
-          <h2 id="integrations-title" data-reveal="up">
+          <h2 id="integrations-title" data-reveal="up" className="font-mono text-[40px] sm:text-[48px] text-white">
             Works Where You Work
           </h2>
           <p>
@@ -328,10 +328,10 @@ function Hero() {
         aria-labelledby="pricing-title"
       >
         <div className="landing-container pricing-section__intro">
-          <h2 className="section-title" id="pricing-title" data-reveal="up">
+          <h2 className="section-title font-mono text-[40px] sm:text-[48px] text-white" id="pricing-title" data-reveal="up">
             Unlock the Power
             <br />
-            of AI with Woof
+            of <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-primary-60">AI with Woof</span>
           </h2>
           <p className="section-copy">
             We offer tailored pricing plans designed to meet the unique needs of

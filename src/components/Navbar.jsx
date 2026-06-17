@@ -5,9 +5,9 @@ import logo from '../assets/logo.svg'
 const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Features', href: '/features' },
-  { label: 'Pricing', href: '/#pricing' },
+  { label: 'Pricing', href: '/pricing' },
   { label: 'Integration', href: '/integration' },
-  { label: 'Documentation', href: '/#how-it-works' },
+  { label: 'Documentation', href: '/documentation' },
 ]
 
 function Navbar() {
@@ -21,12 +21,12 @@ function Navbar() {
         <ul className="navbar__menu">
           {navLinks.map((link) => (
             <li key={link.label}>
-              <a href={link.href}>{link.label}</a>
+              <Link to={link.href}>{link.label}</Link>
             </li>
           ))}
         </ul>
 
-        <Link className="navbar__button" to="/login">
+        <Link className="navbar__button" to="/register">
           Get Started
         </Link>
       </nav>

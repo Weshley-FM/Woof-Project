@@ -158,19 +158,23 @@ export default function Features() {
     <>
       <Navbar />
 
-      <main className="app-content" aria-label="Features content">
-        <section className="features-hero" data-reveal="fade">
-          <h1 className="features-section-title section-title">Supercharge Your Workflow.</h1>
-          <p className="features-section-desc section-copy">
+      <main className="app-content relative z-10" aria-label="Features content">
+        {/* Glow effect */}
+        <div className="absolute -left-1/4 -top-1/4 h-[900px] w-[900px] rounded-full bg-primary-60/40 blur-[150px] opacity-100 pointer-events-none" />
+        <div className="absolute -left-1/4 top-0 h-[700px] w-[700px] rounded-full bg-[#2DD4BF]/30 blur-[120px] opacity-90 pointer-events-none" />
+
+        <section className="features-hero relative z-10" data-reveal="fade">
+          <h1 className="features-section-title section-title font-mono text-[56px] leading-[1.05] sm:text-[64px] lg:text-[72px] text-white">Supercharge Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-primary-60">Workflow.</span></h1>
+          <p className="features-section-desc section-copy font-sans text-[17px] text-neutral-400">
             Boost your development speed with AI that understands<br />your entire project, fixes issues automatically.
           </p>
         </section>
 
         {/* Section 1 */}
-        <section className="features-section">
+        <section className="features-section relative z-10">
           <div className="features-text" data-reveal="up">
-            <h2 className="features-section-title">Understands your<br />entire codebase.</h2>
-            <p className="features-section-desc">
+            <h2 className="features-section-title font-mono text-[40px] sm:text-[48px] text-white">Understands your<br />entire codebase.</h2>
+            <p className="features-section-desc font-sans text-[17px] text-neutral-400">
               Our AI reads your whole repository not just the file you're editing. It understands folder structure, dependencies, naming conventions, patterns, and architecture. That means every suggestion, refactor, or generated code is context-aware and accurate.
             </p>
             <p className="features-prompt-title" style={{marginTop: '24px'}}>AI automatically detects:</p>
@@ -193,9 +197,9 @@ export default function Features() {
         </section>
 
         {/* Section 2 */}
-        <section className="features-section features-section--reverse">
+        <section className="features-section features-section--reverse relative z-10">
           <div className="features-text" data-reveal="up">
-            <p className="features-section-desc">
+            <p className="features-section-desc font-sans text-[17px] text-neutral-400">
               The AI automatically scans your project for vulnerabilities, outdated dependencies, unsafe functions, insecure authentication logic, and risky API exposure.
             </p>
             <p className="features-prompt-title" style={{marginTop: '24px'}}>Detects problems like:</p>
@@ -211,15 +215,15 @@ export default function Features() {
             <PromptCard text="> /secure-all" />
           </div>
           <div className="features-visual">
-            <h2 className="features-section-title" data-reveal="right" style={{marginBottom: '40px'}}>Security<br />built-in.</h2>
+            <h2 className="features-section-title font-mono text-[40px] sm:text-[48px] text-white" data-reveal="right" style={{marginBottom: '40px'}}>Security<br />built-in.</h2>
             <CustomCodePreview rows={codeRows} />
           </div>
         </section>
 
         {/* Section 3 */}
-        <section className="features-section">
+        <section className="features-section relative z-10">
           <div className="features-text" data-reveal="up">
-            <h2 className="features-section-title">Generate tests<br />in seconds.</h2>
+            <h2 className="features-section-title font-mono text-[40px] sm:text-[48px] text-white">Generate tests<br />in seconds.</h2>
             
             <p className="features-prompt-title" style={{marginTop: '40px'}}>AI produces:</p>
             <ul className="features-list" style={{marginBottom: '32px'}}>
@@ -236,7 +240,7 @@ export default function Features() {
             <PromptCard text="> test-ui-all" />
           </div>
           <div className="features-visual" data-reveal="left">
-            <p className="features-section-desc">
+            <p className="features-section-desc font-sans text-[17px] text-neutral-400">
               Stop writing repetitive test boilerplate. The AI generates full test suites for functions, API endpoints, React components, models, or utilities.
             </p>
             <div className="checkmark-card">
@@ -249,13 +253,13 @@ export default function Features() {
         </section>
 
         {/* Section 4 */}
-        <section className="features-section" style={{display: 'block'}}>
+        <section className="features-section relative z-10" style={{display: 'block'}}>
           <div style={{display: 'flex', gap: '80px', marginBottom: '40px', alignItems: 'center'}} data-reveal="up">
             <div style={{flex: 1}}>
-              <h2 className="features-section-title" style={{margin: 0}}>Compare and<br />improve your code.</h2>
+              <h2 className="features-section-title font-mono text-[40px] sm:text-[48px] text-white" style={{margin: 0}}>Compare and<br />improve your code.</h2>
             </div>
             <div style={{flex: 1}}>
-              <p className="features-section-desc" style={{margin: 0}}>
+              <p className="features-section-desc font-sans text-[17px] text-neutral-400" style={{margin: 0}}>
                 The tool provides a visual diff that shows exactly what changed. Perfect for refactoring, debugging, or optimizing large files.
               </p>
             </div>

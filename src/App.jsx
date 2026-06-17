@@ -6,6 +6,9 @@ import Features from './components/Features.jsx'
 import Integration from './components/Integration.jsx'
 import SplashScreen from './components/SplashScreen.jsx'
 import useScrollReveal from './hooks/useScrollReveal.js'
+import PricingPage from './components/PricingPage.jsx'
+import DocumentationPage from './components/DocumentationPage.jsx'
+import RegisterPage from './components/RegisterPage.jsx'
 import './App.css'
 
 function App() {
@@ -27,6 +30,9 @@ function App() {
         <Route path="/features" element={<Features />} />
         <Route path="/integration" element={<Integration />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/pricing" element={<PricingPage />} />
+        <Route path="/documentation" element={<DocumentationPage />} />
+        <Route path="/register" element={<RegisterPage />} />
       </Routes>
     </div>
   )

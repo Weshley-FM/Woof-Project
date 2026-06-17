@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
 import Footer from './Footer.jsx';
 import Navbar from './Navbar.jsx';
-import logo from '../assets/logo.svg';
 
-export default function Login() {
-  const [showPassword, setShowPassword] = useState(false);
-
+export default function RegisterPage() {
   return (
     <>
       <Navbar />
@@ -19,60 +16,72 @@ export default function Login() {
               <div className="flex-1 flex flex-col justify-center w-full lg:items-end">
                 <div className="w-full max-w-[480px]">
                   <h1 className="font-mono text-[40px] sm:text-[48px] lg:text-[56px] leading-[1.1] mb-4">
-                    Welcome<br />Back
+                    Create<br />Your Account
                   </h1>
                   <p className="text-[#a3a3a3] text-[15px] mb-10">
-                    Sign in to access your personalized workspace and manage your projects.
+                    Start building faster with your personal workspace.
                   </p>
 
                   <form className="flex flex-col gap-5" onSubmit={(e) => e.preventDefault()}>
-                    <div className="flex flex-col gap-2">
-                      <label className="text-[14px] text-[#e5e5e5]">Email</label>
-                      <input 
-                        type="email" 
-                        placeholder="admin@gmail.com" 
-                        required
-                        className="bg-[#1a1a1a] border border-white/5 rounded-xl px-4 py-3.5 text-[15px] text-white placeholder-white/30 focus:outline-none focus:border-primary-60/50 transition-colors"
-                      />
+                    <div className="flex flex-col sm:flex-row gap-5">
+                      <div className="flex flex-col gap-2 flex-1">
+                        <label className="text-[14px] text-[#e5e5e5]">Full Name</label>
+                        <input 
+                          type="text" 
+                          placeholder="Name" 
+                          className="bg-[#1a1a1a] border border-white/5 rounded-xl px-4 py-3.5 text-[15px] text-white placeholder-white/30 focus:outline-none focus:border-primary-60/50 transition-colors"
+                        />
+                      </div>
+                      <div className="flex flex-col gap-2 flex-1">
+                        <label className="text-[14px] text-[#e5e5e5]">Email</label>
+                        <input 
+                          type="email" 
+                          placeholder="admin@gmail.com" 
+                          className="bg-[#1a1a1a] border border-white/5 rounded-xl px-4 py-3.5 text-[15px] text-white placeholder-white/30 focus:outline-none focus:border-primary-60/50 transition-colors"
+                        />
+                      </div>
                     </div>
 
                     <div className="flex flex-col gap-2">
                       <label className="text-[14px] text-[#e5e5e5]">Password</label>
                       <div className="relative">
                         <input 
-                          type={showPassword ? "text" : "password"} 
+                          type="password" 
                           placeholder="Password" 
-                          required
                           className="w-full bg-[#1a1a1a] border border-white/5 rounded-xl px-4 py-3.5 text-[15px] text-white placeholder-white/30 focus:outline-none focus:border-primary-60/50 transition-colors"
                         />
-                        <button 
-                          type="button" 
-                          className="absolute right-4 top-1/2 -translate-y-1/2 text-white/40 hover:text-white transition-colors"
-                          onClick={() => setShowPassword(!showPassword)}
-                          aria-label={showPassword ? "Hide password" : "Show password"}
-                        >
+                        <button type="button" className="absolute right-4 top-1/2 -translate-y-1/2 text-white/40 hover:text-white transition-colors">
                           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            {showPassword ? (
-                              <>
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                              </>
-                            ) : (
-                              <>
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
-                              </>
-                            )}
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col gap-2">
+                      <label className="text-[14px] text-[#e5e5e5]">Confirm Password</label>
+                      <div className="relative">
+                        <input 
+                          type="password" 
+                          placeholder="Password" 
+                          className="w-full bg-[#1a1a1a] border border-white/5 rounded-xl px-4 py-3.5 text-[15px] text-white placeholder-white/30 focus:outline-none focus:border-primary-60/50 transition-colors"
+                        />
+                        <button type="button" className="absolute right-4 top-1/2 -translate-y-1/2 text-white/40 hover:text-white transition-colors">
+                          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                           </svg>
                         </button>
                       </div>
                     </div>
 
                     <div className="flex justify-end">
-                      <a href="#forgot" className="text-[13px] text-[#e5e5e5] hover:text-white transition-colors">Forgot Password</a>
+                      <a href="#" className="text-[13px] text-[#e5e5e5] hover:text-white transition-colors">Forgot Password</a>
                     </div>
 
                     <button type="submit" className="w-full bg-primary-60 text-black font-medium text-[16px] py-3.5 rounded-xl hover:bg-primary-60/90 transition-colors mt-2">
-                      Log In
+                      Sign up
                     </button>
 
                     <div className="flex items-center gap-4 my-2">
@@ -89,14 +98,14 @@ export default function Login() {
                     </button>
 
                     <div className="text-center mt-4">
-                      <span className="text-[14px] text-white/50">Don't have an Account? </span>
-                      <Link to="/register" className="text-[14px] text-primary-60 hover:underline font-medium">Sign-Up</Link>
+                      <span className="text-[14px] text-white/50">Already have an Account? </span>
+                      <Link to="/login" className="text-[14px] text-primary-60 hover:underline font-medium">Log In</Link>
                     </div>
                   </form>
                 </div>
               </div>
 
-              {/* Right Column - Image/Gradient (Copied from Register) */}
+              {/* Right Column - Image/Gradient */}
               <div className="hidden lg:flex flex-1 h-[700px] xl:h-[800px] w-full justify-start">
                 <div className="w-full max-w-[480px] h-full rounded-[2.5rem] bg-gradient-to-br from-teal-400 to-primary-60 relative overflow-hidden flex flex-col items-center justify-center text-center px-12 shadow-2xl">
                   
@@ -109,10 +118,11 @@ export default function Login() {
 
                   <div className="relative z-10 max-w-lg">
                     <h2 className="text-[40px] font-sans font-medium text-neutral-100 mb-6">
-                      Welcome Back
+                      Get Started With Us
                     </h2>
                     <p className="text-[16px] leading-relaxed text-neutral-100/90">
-                      Sign in to pick up exactly where you left off.
+                      Sign up to start generating code instantly, organize your
+                      workflow, and seamlessly AI into your development process.
                     </p>
                   </div>
                 </div>
@@ -123,5 +133,5 @@ export default function Login() {
       </main>
       <Footer />
     </>
-  );
+  )
 }

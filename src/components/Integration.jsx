@@ -115,12 +115,16 @@ export default function Integration() {
     <>
       <Navbar />
 
-      <main className="app-content integration-page-container" aria-label="Integrations content">
-        <section className="integration-hero">
+      <main className="app-content integration-page-container relative z-10" aria-label="Integrations content">
+        {/* Glow effect */}
+        <div className="absolute -left-1/4 -top-1/4 h-[900px] w-[900px] rounded-full bg-primary-60/40 blur-[150px] opacity-100 pointer-events-none" />
+        <div className="absolute -left-1/4 top-0 h-[700px] w-[700px] rounded-full bg-[#2DD4BF]/30 blur-[120px] opacity-90 pointer-events-none" />
+
+        <section className="integration-hero relative z-10">
           <div className="integration-hero-text" data-reveal="fade">
-            <h1>Connect Your<br />Workflow In<br />One Place</h1>
-            <p>Integrate your favorite tools and bring your entire workflow together from source control to issue tracking.</p>
-            <button className="btn-primary" style={{width:'fit-content', padding:'16px 32px'}}>Explore</button>
+            <h1 className="font-mono text-[56px] leading-[1.05] sm:text-[64px] lg:text-[72px] text-white mb-6">Connect Your<br />Workflow In<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-primary-60">One Place</span></h1>
+            <p className="font-sans text-[17px] text-neutral-400 mb-8">Integrate your favorite tools and bring your entire workflow together from source control to issue tracking.</p>
+            <button className="bg-primary-60 text-black font-medium text-[16px] rounded-xl hover:bg-primary-60/90 transition-colors" style={{width:'fit-content', padding:'16px 32px'}}>Explore</button>
           </div>
           <div className="integration-hero-visual" data-reveal="fade">
             <div className="integration-circle-track"></div>
@@ -139,10 +143,10 @@ export default function Integration() {
           </div>
         </section>
 
-        <section className="integration-grid-section">
+        <section className="integration-grid-section relative z-10">
           <div className="integration-grid-header" data-reveal="up">
-            <h2>Supported Integrations</h2>
-            <p>Effortlessly connect the platforms you already use. Each integration helps you automate tasks, sync updates, and speed up your development process.</p>
+            <h2 className="font-mono text-[40px] sm:text-[48px] text-white mb-4">Supported Integrations</h2>
+            <p className="font-sans text-[17px] text-neutral-400">Effortlessly connect the platforms you already use. Each integration helps you automate tasks, sync updates, and speed up your development process.</p>
           </div>
           
           <div className="integration-cards">
