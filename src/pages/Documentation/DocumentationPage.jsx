@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Footer from '../../components/Footer/Footer.jsx';
 import Navbar from '../../components/Navbar/Navbar.jsx';
+import neonShadow from '../../assets/neon-shadow.png';
 
 const SECTIONS = [
   {
@@ -135,8 +136,18 @@ export default function DocumentationPage() {
     <>
       <Navbar />
       <main className="app-content relative z-10 pb-24 pt-8 lg:pb-32 lg:pt-10">
-        {/* Glow effect positioned at the absolute top-left of the page */}
-        <div className="absolute top-0 left-0 h-[1200px] w-[450px] -translate-x-1/2 -translate-y-1/2 -rotate-45 rounded-full bg-primary-60/50 blur-[100px] opacity-100 pointer-events-none z-0" />
+        {/* Primary Glow */}
+        <img 
+          src={neonShadow} 
+          alt="" 
+          className="pointer-events-none absolute z-0 -top-[30rem] -left-[10rem] w-[1000px] max-w-[100vw] h-auto object-contain mix-blend-screen opacity-100" 
+        />
+        {/* Secondary Glow (Higher up) */}
+        <img 
+          src={neonShadow} 
+          alt="" 
+          className="pointer-events-none absolute z-0 -top-[45rem] -left-[5rem] w-[1200px] max-w-[100vw] h-auto object-contain mix-blend-screen opacity-80" 
+        />
 
         <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 relative z-10" data-reveal="up">
           

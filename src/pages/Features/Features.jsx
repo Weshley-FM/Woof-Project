@@ -1,3 +1,4 @@
+import { useState, useRef, useEffect } from 'react';
 import './Features.css';
 import '../Home/Hero.css'; // Reuse some Hero components CSS (PromptCard, CodePreview, FileTree)
 import Navbar from '../../components/Navbar/Navbar.jsx';
@@ -87,12 +88,63 @@ function FileTree() {
   );
 }
 
-function CustomCodePreview({ rows, copyButton = false, highlightRed = null, highlightGreen = null }) {
+function CustomCodePreview({ rows, copyButton = false, highlightRed = null, highlightGreen = null, animated = false }) {
+  const [copied, setCopied] = useState(false);
+  const [visibleChars, setVisibleChars] = useState(animated ? 0 : Infinity);
+  const [hasStarted, setHasStarted] = useState(!animated);
+  const containerRef = useRef(null);
+
+  const totalChars = rows.reduce((acc, row) => 
+    acc + row.parts.reduce((acc2, part) => acc2 + part.text.length, 0) + 1, 0
+  );
+
+  useEffect(() => {
+    if (!animated) return;
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        setHasStarted(true);
+        observer.disconnect();
+      }
+    }, { threshold: 0.5 });
+    
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+    return () => observer.disconnect();
+  }, [animated]);
+
+  useEffect(() => {
+    if (!animated || !hasStarted) return;
+    setVisibleChars(0);
+    let current = 0;
+    const interval = setInterval(() => {
+      current += 1;
+      setVisibleChars(current);
+      if (current >= totalChars) {
+        clearInterval(interval);
+      }
+    }, 30);
+    return () => clearInterval(interval);
+  }, [hasStarted, animated, totalChars]);
+
+  const handleCopy = () => {
+    const text = rows.map(row => row.parts.map(part => part.text).join('')).join('\n');
+    navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  let charsRendered = 0;
+
   return (
-    <div className="code-card" data-reveal="right">
+    <div className="code-card" data-reveal="right" ref={containerRef}>
       {copyButton && (
-        <button className="code-card__copy" type="button">
-          Copy
+        <button 
+          className="code-card__copy" 
+          type="button"
+          onClick={handleCopy}
+        >
+          {copied ? 'Copied!' : 'Copy'}
         </button>
       )}
       {rows.map((row) => {
@@ -100,11 +152,33 @@ function CustomCodePreview({ rows, copyButton = false, highlightRed = null, high
         if (highlightRed === row.number) rowClass += ' code-card-row-red';
         if (highlightGreen === row.number) rowClass += ' code-card-row-green';
 
+        const renderedParts = [];
+        
+        if (charsRendered < visibleChars) {
+          for (const part of row.parts) {
+            if (charsRendered >= visibleChars) break;
+            
+            const remaining = visibleChars - charsRendered;
+            if (part.text.length <= remaining) {
+              renderedParts.push(part);
+              charsRendered += part.text.length;
+            } else {
+              renderedParts.push({ ...part, text: part.text.slice(0, remaining) });
+              charsRendered += remaining;
+              break;
+            }
+          }
+          
+          if (charsRendered < visibleChars) {
+            charsRendered += 1;
+          }
+        }
+
         return (
           <div className={rowClass} key={row.number}>
             <span className="code-card__number">{row.number}</span>
             <code>
-              {row.parts.map((part, index) => (
+              {renderedParts.map((part, index) => (
                 <span
                   className={
                     part.tone ? `code-token code-token--${part.tone}` : 'code-token'
@@ -216,7 +290,7 @@ export default function Features() {
           </div>
           <div className="features-visual">
             <h2 className="features-section-title font-mono text-[40px] sm:text-[48px] text-white" data-reveal="right" style={{marginBottom: '40px'}}>Security<br />built-in.</h2>
-            <CustomCodePreview rows={codeRows} />
+            <CustomCodePreview rows={codeRows} animated={true} />
           </div>
         </section>
 

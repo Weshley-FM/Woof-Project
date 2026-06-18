@@ -41,10 +41,10 @@ export default function PricingPage() {
           
           {/* Header */}
           <div className="flex flex-col items-center text-center gap-6 mt-10">
-            <h1 className="font-mono text-[56px] leading-[1.05] font-normal text-white sm:text-[64px] lg:text-[72px]">
+            <h1 className="font-mono text-[48px] leading-[1.05] font-normal text-white sm:text-[56px] lg:text-[64px]">
               Pricing
             </h1>
-            <p className="max-w-xl font-sans text-[17px] leading-8 text-natural-70">
+            <p className="max-w-xl font-sans text-[15px] leading-8 text-natural-70">
               Safely collect, process, and share your data with the plan that&apos;s right for you
             </p>
           </div>
@@ -53,27 +53,27 @@ export default function PricingPage() {
           <div className="grid grid-cols-1 gap-8 mt-24 lg:grid-cols-2 lg:gap-10">
             {/* Basic Plan Card */}
             <div className="pricing-card relative rounded-[1.75rem] bg-gradient-to-r from-teal-400 to-primary-60 p-[1px] shadow-2xl mt-4 lg:mt-0">
-              <span className="absolute left-8 -top-4 z-10 rounded-md bg-gradient-to-r from-teal-400 to-primary-60 px-3 py-1.5 text-[14px] font-semibold text-black shadow-sm">
+              <span className="absolute left-8 -top-4 z-10 rounded-md bg-gradient-to-r from-teal-400 to-primary-60 px-3 py-1.5 text-[13px] font-semibold text-black shadow-sm">
                 Most Popular
               </span>
               <div className="relative flex h-full flex-col justify-between rounded-[calc(1.75rem-1px)] bg-[#0a0a0a] p-8 sm:p-10">
                 <div>
                   <div className="flex items-start justify-between">
                     <div className="pt-2">
-                      <h3 className="font-sans text-[28px] text-white">Basic Plan</h3>
-                      <p className="mt-2 font-sans text-[14px] text-natural-70">The Basic Plan is designed for small.</p>
+                      <h3 className="font-sans text-[24px] text-white">Basic Plan</h3>
+                      <p className="mt-2 font-sans text-[13px] text-natural-70">The Basic Plan is designed for small.</p>
                     </div>
                     <div className="flex items-start gap-1">
-                      <span className="mt-2 font-mono text-[20px] font-medium text-natural-70">$</span>
-                      <span className="font-mono text-[64px] leading-[1] font-medium text-white">599</span>
-                      <span className="self-end pb-2 font-mono text-[15px] text-natural-70">/mo</span>
+                      <span className="mt-2 font-mono text-[16px] font-medium text-natural-70">$</span>
+                      <span className="font-mono text-[56px] leading-[1] font-medium text-white">599</span>
+                      <span className="self-end pb-2 font-mono text-[14px] text-natural-70">/mo</span>
                     </div>
                   </div>
 
-                  <div className="mt-12">
-                    <h4 className="font-sans text-[18px] text-white">Features</h4>
-                    <p className="mt-2 font-sans text-[14px] text-natural-70">Everything in our basic plan....</p>
-                    <ul className="mt-6 space-y-5">
+                  <div className="mt-10">
+                    <h4 className="font-sans text-[16px] text-white">Features</h4>
+                    <p className="mt-2 font-sans text-[13px] text-natural-70">Everything in our basic plan....</p>
+                    <ul className="mt-6 space-y-4">
                       {[
                         '20 hours of consultation',
                         'Access to the AI Learning Portal',
@@ -81,20 +81,20 @@ export default function PricingPage() {
                         'Email support',
                         'AI Readiness Assessment',
                       ].map((item) => (
-                        <li key={item} className="flex items-center gap-4">
-                          <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-teal-400 to-primary-60 text-black">
-                            <svg className="h-3 w-3" viewBox="0 0 14 10" fill="none">
+                        <li key={item} className="flex items-center gap-3">
+                          <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-teal-400 to-primary-60 text-black">
+                            <svg className="h-2.5 w-2.5" viewBox="0 0 14 10" fill="none">
                               <path d="M1 5L4.5 8.5L13 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                           </span>
-                          <span className="font-sans text-[15px] text-[#e5e5e5]">{item}</span>
+                          <span className="font-sans text-[14px] text-[#e5e5e5]">{item}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                 </div>
 
-                <button className="mt-12 w-full rounded-xl bg-primary-60 py-4 text-[16px] font-medium text-black transition-transform duration-200 hover:scale-[1.02]">
+                <button className="mt-10 w-full rounded-xl bg-primary-60 py-3 text-[15px] font-medium text-black transition-transform duration-200 hover:scale-[1.02]">
                   Get This Plan
                 </button>
               </div>
@@ -106,20 +106,20 @@ export default function PricingPage() {
                 <div>
                   <div className="flex items-start justify-between">
                     <div className="pt-2">
-                      <h3 className="font-sans text-[28px] text-white">Premium Plan</h3>
-                      <p className="mt-2 font-sans text-[14px] text-natural-70">Perfect for organizations</p>
+                      <h3 className="font-sans text-[24px] text-white">Premium Plan</h3>
+                      <p className="mt-2 font-sans text-[13px] text-natural-70">Perfect for organizations</p>
                     </div>
                     <div className="flex items-start gap-1">
-                      <span className="mt-2 font-mono text-[20px] font-medium text-natural-70">$</span>
-                      <span className="font-mono text-[64px] leading-[1] font-medium text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-primary-60">699</span>
-                      <span className="self-end pb-2 font-mono text-[15px] text-natural-70">/mo</span>
+                      <span className="mt-2 font-mono text-[16px] font-medium text-natural-70">$</span>
+                      <span className="font-mono text-[56px] leading-[1] font-medium text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-primary-60">699</span>
+                      <span className="self-end pb-2 font-mono text-[14px] text-natural-70">/mo</span>
                     </div>
                   </div>
 
-                  <div className="mt-12">
-                    <h4 className="font-sans text-[18px] text-white">Features</h4>
-                    <p className="mt-2 font-sans text-[14px] text-natural-70">Everything in our premium plan....</p>
-                    <ul className="mt-6 space-y-5">
+                  <div className="mt-10">
+                    <h4 className="font-sans text-[16px] text-white">Features</h4>
+                    <p className="mt-2 font-sans text-[13px] text-natural-70">Everything in our premium plan....</p>
+                    <ul className="mt-6 space-y-4">
                       {[
                         '40 hours of consultation',
                         'Comprehensive machine learning',
@@ -127,20 +127,20 @@ export default function PricingPage() {
                         'Advanced analytics and insights',
                         'Priority support',
                       ].map((item) => (
-                        <li key={item} className="flex items-center gap-4">
-                          <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-teal-400 to-primary-60 text-black">
-                            <svg className="h-3 w-3" viewBox="0 0 14 10" fill="none">
+                        <li key={item} className="flex items-center gap-3">
+                          <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-teal-400 to-primary-60 text-black">
+                            <svg className="h-2.5 w-2.5" viewBox="0 0 14 10" fill="none">
                               <path d="M1 5L4.5 8.5L13 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                           </span>
-                          <span className="font-sans text-[15px] text-[#e5e5e5]">{item}</span>
+                          <span className="font-sans text-[14px] text-[#e5e5e5]">{item}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                 </div>
 
-                <button className="mt-12 w-full rounded-xl bg-primary-60 py-4 text-[16px] font-medium text-black transition-transform duration-200 hover:scale-[1.02]">
+                <button className="mt-10 w-full rounded-xl bg-primary-60 py-3 text-[15px] font-medium text-black transition-transform duration-200 hover:scale-[1.02]">
                   Get This Plan
                 </button>
               </div>
@@ -153,20 +153,20 @@ export default function PricingPage() {
               <thead>
                 <tr>
                   <th className="w-1/3 border-b border-white/10 pb-8 pr-8 align-top font-normal">
-                    <h2 className="font-sans text-[40px] leading-tight text-white">Compare Plans</h2>
-                    <p className="mt-4 max-w-sm font-sans text-[15px] text-natural-70">
+                    <h2 className="font-sans text-[32px] leading-tight text-white">Compare Plans</h2>
+                    <p className="mt-4 max-w-sm font-sans text-[14px] text-natural-70">
                       Safely collect, process, and share your data with the plan that&apos;s right for you
                     </p>
                   </th>
                   <th className="w-1/3 border-b border-l border-white/10 pb-8 px-8 align-top font-normal">
-                    <h3 className="font-sans text-[18px] text-white">Basic Plan</h3>
-                    <button className="mt-6 w-full rounded-xl bg-primary-60 py-3.5 text-[15px] font-medium text-black transition-transform duration-200 hover:scale-[1.02]">
+                    <h3 className="font-sans text-[16px] text-white">Basic Plan</h3>
+                    <button className="mt-6 w-full rounded-xl bg-primary-60 py-2.5 text-[14px] font-medium text-black transition-transform duration-200 hover:scale-[1.02]">
                       Get This Plan
                     </button>
                   </th>
                   <th className="w-1/3 border-b border-l border-white/10 pb-8 pl-8 align-top font-normal">
-                    <h3 className="font-sans text-[18px] text-white">Premium Plan</h3>
-                    <button className="mt-6 w-full rounded-xl bg-primary-60 py-3.5 text-[15px] font-medium text-black transition-transform duration-200 hover:scale-[1.02]">
+                    <h3 className="font-sans text-[16px] text-white">Premium Plan</h3>
+                    <button className="mt-6 w-full rounded-xl bg-primary-60 py-2.5 text-[14px] font-medium text-black transition-transform duration-200 hover:scale-[1.02]">
                       Get This Plan
                     </button>
                   </th>
@@ -185,16 +185,16 @@ export default function PricingPage() {
                   { feature: 'Priority support', basic: false, premium: true },
                 ].map((row, idx) => (
                   <tr key={idx}>
-                    <td className="border-b border-white/10 py-6 pr-8 font-sans text-[15px] text-[#e5e5e5]">
+                    <td className="border-b border-white/10 py-6 pr-8 font-sans text-[14px] text-[#e5e5e5]">
                       {row.feature}
                     </td>
                     <td className="border-b border-l border-white/10 py-6 px-8 text-center">
                       {typeof row.basic === 'string' ? (
-                        <span className="font-sans text-[15px] text-[#e5e5e5]">{row.basic}</span>
+                        <span className="font-sans text-[14px] text-[#e5e5e5]">{row.basic}</span>
                       ) : row.basic ? (
                         <div className="flex justify-center">
-                          <span className="flex h-[22px] w-[22px] shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-teal-400 to-primary-60 text-black">
-                            <svg className="h-3 w-3" viewBox="0 0 14 10" fill="none">
+                          <span className="flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-teal-400 to-primary-60 text-black">
+                            <svg className="h-2.5 w-2.5" viewBox="0 0 14 10" fill="none">
                               <path d="M1 5L4.5 8.5L13 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                           </span>
@@ -203,11 +203,11 @@ export default function PricingPage() {
                     </td>
                     <td className="border-b border-l border-white/10 py-6 pl-8 text-center">
                       {typeof row.premium === 'string' ? (
-                        <span className="font-sans text-[15px] text-[#e5e5e5]">{row.premium}</span>
+                        <span className="font-sans text-[14px] text-[#e5e5e5]">{row.premium}</span>
                       ) : row.premium ? (
                         <div className="flex justify-center">
-                          <span className="flex h-[22px] w-[22px] shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-teal-400 to-primary-60 text-black">
-                            <svg className="h-3 w-3" viewBox="0 0 14 10" fill="none">
+                          <span className="flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-teal-400 to-primary-60 text-black">
+                            <svg className="h-2.5 w-2.5" viewBox="0 0 14 10" fill="none">
                               <path d="M1 5L4.5 8.5L13 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                           </span>
@@ -223,10 +223,10 @@ export default function PricingPage() {
           {/* FAQ Section */}
           <div className="mt-32 pb-20">
             <div className="flex flex-col items-center text-center gap-6 mb-16">
-              <h2 className="font-mono text-[56px] leading-[1.05] font-normal text-white sm:text-[64px] lg:text-[72px]">
+              <h2 className="font-mono text-[40px] leading-[1.05] font-normal text-white sm:text-[48px] lg:text-[56px]">
                 FAQ
               </h2>
-              <p className="max-w-xl font-sans text-[17px] leading-8 text-natural-70">
+              <p className="max-w-xl font-sans text-[15px] leading-8 text-natural-70">
                 Safely collect, process, and share your data with the plan that&apos;s right for you
               </p>
             </div>
@@ -240,16 +240,16 @@ export default function PricingPage() {
                       className="w-full flex items-center justify-between text-left focus:outline-none group"
                       onClick={() => setOpenFaqIndex(isOpen ? null : index)}
                     >
-                      <h3 className="font-sans text-[18px] text-white group-hover:text-white/80 transition-colors">
+                      <h3 className="font-sans text-[16px] text-white group-hover:text-white/80 transition-colors">
                         {faq.question}
                       </h3>
-                      <span className="ml-4 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors">
+                      <span className="ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors">
                         {isOpen ? (
-                          <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
                           </svg>
                         ) : (
-                          <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                           </svg>
                         )}
@@ -259,7 +259,7 @@ export default function PricingPage() {
                     <div 
                       className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}
                     >
-                      <p className="font-sans text-[15px] leading-relaxed text-natural-70 pr-16">
+                      <p className="font-sans text-[14px] leading-relaxed text-natural-70 pr-16">
                         {faq.answer}
                       </p>
                     </div>
