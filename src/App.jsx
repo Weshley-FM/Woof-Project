@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
+import { LayoutGroup } from 'framer-motion'
 import Home from './pages/Home/Home.jsx'
 import Login from './pages/Login/Login.jsx'
 import Features from './pages/Features/Features.jsx'
@@ -24,6 +25,8 @@ function App() {
     if (!isReady) {
       return undefined
     }
+
+    window.dispatchEvent(new Event('appReady'))
 
     const revealItems = Array.from(document.querySelectorAll('[data-reveal]'))
 
@@ -56,18 +59,20 @@ function App() {
   }, [isReady, location.pathname])
 
   return (
-    <div className={`app-shell${isReady ? ' app-shell--ready' : ''}`}>
-      <SplashScreen isReady={isReady} />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/features" element={<Features />} />
-        <Route path="/integration" element={<Integration />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/pricing" element={<PricingPage />} />
-        <Route path="/documentation" element={<DocumentationPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-      </Routes>
-    </div>
+    <LayoutGroup>
+      <div className={`app-shell${isReady ? ' app-shell--ready' : ''}`}>
+        <SplashScreen isReady={isReady} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/features" element={<Features />} />
+          <Route path="/integration" element={<Integration />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/documentation" element={<DocumentationPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+        </Routes>
+      </div>
+    </LayoutGroup>
   )
 }
 

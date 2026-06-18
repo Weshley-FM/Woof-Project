@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import './SplashScreen.css'
-import logo from '../../assets/logo.svg'
+import logo from '../../assets/Logo.png'
 
 const LOADING_TEXTS = [
   'Preparing your workspace...',
@@ -24,15 +25,28 @@ function SplashScreen({ isReady }) {
   }, [isReady])
 
   return (
-    <div className={`splash-screen ${isReady ? 'splash-screen--hiding' : ''}`} aria-hidden="true">
-      <div className="splash-screen__frame">
-        <img className="splash-screen__logo" src={logo} alt="" />
-        <p className="splash-screen__text">{LOADING_TEXTS[textIndex]}</p>
-        <div className="splash-screen__bar">
-          <span />
-        </div>
-      </div>
-    </div>
+    <AnimatePresence>
+      {!isReady && (
+        <motion.div 
+          className="splash-screen" 
+          exit={{ opacity: 0, transition: { duration: 0.8 } }}
+          aria-hidden="true"
+        >
+          <div className="splash-screen__frame">
+            <motion.img 
+              layoutId="main-logo" 
+              className="splash-screen__logo" 
+              src={logo} 
+              alt="" 
+            />
+            <p className="splash-screen__text">{LOADING_TEXTS[textIndex]}</p>
+            <div className="splash-screen__bar">
+              <span />
+            </div>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   )
 }
 

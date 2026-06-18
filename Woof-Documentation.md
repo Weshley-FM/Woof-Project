@@ -160,7 +160,7 @@ The reusable global UI components are located inside `src/components/`.
 
 | Component | Description |
 | :--- | :--- |
-| `Navbar.jsx` | Main website navigation used across primary pages and routes. |
+| `Navbar.jsx` | Main website navigation used across primary pages and routes (excluding Login and Register pages). |
 | `Footer.jsx` | Global footer component for closing brand, navigation, and supporting information. |
 | `SplashScreen.jsx` | Global animated loading screen component shown upon app startup. |
 
@@ -169,12 +169,12 @@ The website pages are organized as route-based modules inside `src/pages/`.
 
 | Page Module | Description |
 | :--- | :--- |
-| `Home/` | Homepage experience including the main hero, code previews, and value propositions. |
+| `Home/` | Homepage experience including the main hero, code previews, and pricing section. |
 | `Pricing/` | Pricing plans and feature comparisons. |
 | `Features/` | Detailed feature showcase and capabilities explanation. |
 | `Integrations/` | Showcase of supported third-party tools and plugins. |
 | `Documentation/`| Static documentation reading page structure. |
-| `Login/` & `Register/`| User authentication flow and forms. |
+| `Login/` & `Register/`| User authentication flow and forms (designed cleanly without the Navbar). |
 
 The active route map is managed in `src/App.jsx`:
 
