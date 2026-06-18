@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import logoProduct from '../../assets/Logo.png'
@@ -6,12 +6,25 @@ import logoProduct from '../../assets/Logo.png'
 export default function Navbar({ showLogo = true }) {
   const location = useLocation()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [appReady, setAppReady] = useState(false)
+
+  useEffect(() => {
+    const handleReady = () => setAppReady(true)
+    window.addEventListener('appReady', handleReady)
+    
+    const timer = setTimeout(() => setAppReady(true), 3500)
+    
+    return () => {
+      window.removeEventListener('appReady', handleReady)
+      clearTimeout(timer)
+    }
+  }, [])
 
   return (
     <nav className="relative z-30 mx-auto w-full max-w-6xl px-6 sm:px-10 lg:px-16 py-6">
       <div className="flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 min-w-[120px]">
-          {showLogo && (
+          {showLogo && appReady && (
             <motion.img 
               layoutId="main-logo"
               src={logoProduct} 

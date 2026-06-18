@@ -4,12 +4,7 @@
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
-  background:
-    radial-gradient(circle at 5% 5%, rgba(200, 253, 38, 0.15), transparent 500px),
-    radial-gradient(circle at 95% 30%, rgba(200, 253, 38, 0.08), transparent 600px),
-    radial-gradient(circle at 10% 65%, rgba(200, 253, 38, 0.06), transparent 700px),
-    radial-gradient(circle at 85% 95%, rgba(200, 253, 38, 0.10), transparent 500px),
-    var(--color-neutral-100);
+  background: var(--color-neutral-100);
   isolation: isolate;
 }
 

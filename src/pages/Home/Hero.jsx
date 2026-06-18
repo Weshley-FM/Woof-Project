@@ -1,5 +1,7 @@
+import { useState, useEffect, useRef } from 'react'
 import './Hero.css'
 import { ChevronRight, Folder, Play } from 'lucide-react'
+import neonShadow from '../../assets/neon-shadow.png'
 
 const languageItems = [
   { name: 'PHP', icon: <PhpIcon /> },
@@ -133,24 +135,25 @@ const codeRows = [
 ]
 
 function Hero() {
+  const [typingTrigger, setTypingTrigger] = useState(0);
+
   return (
     <>
       <section className="section-reveal hero-reveal relative z-0 grid grid-cols-1 gap-0 overflow-visible pb-10 pt-10 lg:min-h-[640px] lg:grid-cols-12" id="home">
-        <div className="hero-neon-field" />
-        <div className="hero-neon-beam" />
-        <div className="hero-scan-line" />
+        <img src={neonShadow} alt="" className="hero-neon-field" />
 
         {/* Left Column - Content */}
         <div className="relative z-10 col-span-1 lg:col-span-5 px-6 sm:px-10 lg:px-0 lg:pl-[max(4rem,calc(50vw-576px+4rem))]">
           {/* Headline - Two perfect lines */}
-          <div className="opacity-0 translate-y-8 animate-fade-up font-mono text-[44px] sm:text-[56px] lg:text-[70px] leading-[1.1] font-normal text-white whitespace-nowrap">
-            <div>Code Faster,</div>
+          <div className="opacity-0 translate-y-8 animate-fade-up font-mono text-[70px] leading-[1.1] font-normal text-white whitespace-nowrap">
+            <div className="pb-3">Code Faster,</div>
             <div>Debug Smarter.</div>
           </div>
 
           {/* Subheadline */}
-          <p className="mt-6 max-w-md opacity-0 translate-y-8 animate-fade-up-delay-200 text-[18px] leading-[1.6] text-neutral-400 font-sans">
-            Your AI-powered pair programmer. Generate functions, fix bugs, and refactor code in seconds.
+          <p className="mt-6 opacity-0 translate-y-8 animate-fade-up-delay-200 text-[16px] leading-[1.6] text-[#cccccc] font-sans">
+            <span className="whitespace-nowrap">Your AI-powered pair programmer. Generate functions, fix bugs,</span><br />
+            <span className="whitespace-nowrap">and refactor code in seconds.</span>
           </p>
 
           {/* Action Buttons */}
@@ -171,13 +174,13 @@ function Hero() {
           {/* Stats Section */}
           <div className="mt-16 opacity-0 translate-y-8 animate-fade-up-delay-400 flex flex-col gap-12 sm:flex-row">
             <div>
-              <div className="font-mono text-[64px] leading-[1.2] font-medium bg-gradient-to-r from-[#2DD4BF] to-primary-60 bg-clip-text text-transparent">
+              <div className="font-sans text-[48px] leading-[1.2] font-medium bg-gradient-to-r from-[#2DD4BF] to-primary-60 bg-clip-text text-transparent">
                 84%
               </div>
               <div className="mt-3 text-[16px] font-sans text-neutral-400">Adoption Rate</div>
             </div>
             <div>
-              <div className="font-mono text-[64px] leading-[1.2] font-medium bg-gradient-to-r from-[#2DD4BF] to-primary-60 bg-clip-text text-transparent">
+              <div className="font-sans text-[48px] leading-[1.2] font-medium bg-gradient-to-r from-[#2DD4BF] to-primary-60 bg-clip-text text-transparent">
                 40%
               </div>
               <div className="mt-3 text-[16px] font-sans text-neutral-400">Efficiency Gains</div>
@@ -389,6 +392,7 @@ function Hero() {
               <button
                 className="button-primary button-primary--small"
                 type="button"
+                onClick={() => setTypingTrigger(prev => prev + 1)}
               >
                 Generate
               </button>
@@ -396,7 +400,7 @@ function Hero() {
             <div className="demo-status" data-reveal="up">
               Generating improved PHP controller... Done! (0.4s)
             </div>
-            <CodePreview copyButton />
+            <CodePreview copyButton typingTrigger={typingTrigger} />
           </div>
         </div>
       </section>
@@ -432,7 +436,7 @@ function Hero() {
       <section className="relative z-20 w-full bg-natural-100 py-24 lg:py-28" id="pricing">
         <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16">
           <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
-            <h2 className="font-mono text-[48px] leading-[1.03] font-normal text-white sm:text-[56px] lg:text-[64px]">
+            <h2 className="font-mono text-[32px] sm:text-[40px] lg:text-[48px] leading-[1.03] font-medium text-white">
               Unlock the Power of AI with Woof
             </h2>
             <p className="max-w-xl font-sans text-[17px] leading-8 text-natural-70">
@@ -450,12 +454,12 @@ function Hero() {
                 <div>
                   <div className="flex items-start justify-between">
                     <div className="pt-2">
-                      <h3 className="font-sans text-[28px] text-white">Basic Plan</h3>
+                      <h3 className="font-sans text-[24px] text-white">Basic Plan</h3>
                       <p className="mt-2 font-sans text-[14px] text-natural-70">The Basic Plan is designed for small.</p>
                     </div>
                     <div className="flex items-start gap-1">
                       <span className="mt-2 font-mono text-[20px] font-medium text-natural-70">$</span>
-                      <span className="font-mono text-[64px] leading-[1] font-medium text-white">599</span>
+                      <span className="font-mono text-[48px] leading-[1] font-medium text-white">599</span>
                       <span className="self-end pb-2 font-mono text-[15px] text-natural-70">/mo</span>
                     </div>
                   </div>
@@ -496,12 +500,12 @@ function Hero() {
                 <div>
                   <div className="flex items-start justify-between">
                     <div className="pt-2">
-                      <h3 className="font-sans text-[28px] text-white">Premium Plan</h3>
+                      <h3 className="font-sans text-[24px] text-white">Premium Plan</h3>
                       <p className="mt-2 font-sans text-[14px] text-natural-70">Perfect for organizations</p>
                     </div>
                     <div className="flex items-start gap-1">
                       <span className="mt-2 font-mono text-[20px] font-medium text-natural-70">$</span>
-                      <span className="font-mono text-[64px] leading-[1] font-medium bg-gradient-to-r from-[#bfff00] to-[#2DD4BF] bg-clip-text text-transparent">699</span>
+                      <span className="font-mono text-[48px] leading-[1] font-medium bg-gradient-to-r from-[#bfff00] to-[#2DD4BF] bg-clip-text text-transparent">699</span>
                       <span className="self-end pb-2 font-mono text-[15px] text-natural-70">/mo</span>
                     </div>
                   </div>
@@ -592,31 +596,105 @@ function TreeRow({ label, open = false, file = false, indent = 0 }) {
   )
 }
 
-function CodePreview({ copyButton = false }) {
+function CodePreview({ copyButton = false, typingTrigger = 0 }) {
+  const [copied, setCopied] = useState(false);
+  const [visibleChars, setVisibleChars] = useState(0);
+  const [hasStarted, setHasStarted] = useState(false);
+  const containerRef = useRef(null);
+
+  const totalChars = codeRows.reduce((acc, row) => 
+    acc + row.parts.reduce((acc2, part) => acc2 + part.text.length, 0) + 1, 0
+  );
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        setHasStarted(true);
+        observer.disconnect();
+      }
+    }, { threshold: 0.5 });
+    
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!hasStarted) return;
+    setVisibleChars(0);
+    let current = 0;
+    const interval = setInterval(() => {
+      current += 1;
+      setVisibleChars(current);
+      if (current >= totalChars) {
+        clearInterval(interval);
+      }
+    }, 30);
+    return () => clearInterval(interval);
+  }, [hasStarted, typingTrigger, totalChars]);
+
+  const handleCopy = () => {
+    const text = codeRows.map(row => row.parts.map(part => part.text).join('')).join('\n');
+    navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  let charsRendered = 0;
+
   return (
-    <div className="code-card" data-reveal="right">
+    <div className="code-card" data-reveal="right" ref={containerRef}>
       {copyButton && (
-        <button className="code-card__copy" type="button">
-          Copy
+        <button 
+          className="code-card__copy" 
+          type="button"
+          onClick={handleCopy}
+        >
+          {copied ? 'Copied!' : 'Copy'}
         </button>
       )}
-      {codeRows.map((row) => (
-        <div className="code-card__row" key={row.number}>
-          <span className="code-card__number">{row.number}</span>
-          <code>
-            {row.parts.map((part, index) => (
-              <span
-                className={
-                  part.tone ? `code-token code-token--${part.tone}` : 'code-token'
-                }
-                key={`${row.number}-${index}`}
-              >
-                {part.text}
-              </span>
-            ))}
-          </code>
-        </div>
-      ))}
+      {codeRows.map((row) => {
+        const renderedParts = [];
+        
+        if (charsRendered < visibleChars) {
+          for (const part of row.parts) {
+            if (charsRendered >= visibleChars) break;
+            
+            const remaining = visibleChars - charsRendered;
+            if (part.text.length <= remaining) {
+              renderedParts.push(part);
+              charsRendered += part.text.length;
+            } else {
+              renderedParts.push({ ...part, text: part.text.slice(0, remaining) });
+              charsRendered += remaining;
+              break;
+            }
+          }
+          
+          if (charsRendered < visibleChars) {
+            charsRendered += 1;
+          }
+        }
+
+        return (
+          <div className="code-card__row" key={row.number}>
+            <span className="code-card__number">{row.number}</span>
+            <code>
+              {renderedParts.map((part, index) => (
+                <span
+                  className={
+                    part.tone ? `code-token code-token--${part.tone}` : 'code-token'
+                  }
+                  key={`${row.number}-${index}`}
+                >
+                  {part.text}
+                </span>
+              ))}
+            </code>
+          </div>
+        );
+      })}
       <div className="code-card__ghost-lines" aria-hidden="true">
         <span />
         <span />
