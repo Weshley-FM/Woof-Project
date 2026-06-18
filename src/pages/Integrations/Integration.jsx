@@ -61,10 +61,10 @@ function GithubIcon() {
 function GitlabIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor">
-      <path d="M23.955 13.587l-1.342-4.135-2.664-8.189A.456.456 0 0019.083.99a.456.456 0 00-.4.275L16.03 8.441H7.97L5.318 1.265a.456.456 0 00-.4-.275.456.456 0 00-.4.275L1.85 9.452.51 13.587a.91.91 0 00.327.994l11.164 8.118 11.163-8.118a.91.91 0 00.327-.994z" fill="#E24329"/>
-      <path d="M12 22.699l11.164-8.118-3.411-10.51-5.088 15.657L12 22.699z" fill="#FC6D26"/>
-      <path d="M12 22.699L.836 14.581l3.411-10.51 5.088 15.657L12 22.699z" fill="#FC6D26"/>
-      <path d="M12 22.699l2.665-8.189H9.335L12 22.699z" fill="#FCA326"/>
+      <path d="M23.955 13.587l-1.342-4.135-2.664-8.189A.456.456 0 0019.083.99a.456.456 0 00-.4.275L16.03 8.441H7.97L5.318 1.265a.456.456 0 00-.4-.275.456.456 0 00-.4.275L1.85 9.452.51 13.587a.91.91 0 00.327.994l11.164 8.118 11.163-8.118a.91.91 0 00.327-.994z" />
+      <path d="M12 22.699l11.164-8.118-3.411-10.51-5.088 15.657L12 22.699z" />
+      <path d="M12 22.699L.836 14.581l3.411-10.51 5.088 15.657L12 22.699z" />
+      <path d="M12 22.699l2.665-8.189H9.335L12 22.699z" />
     </svg>
   );
 }
@@ -72,7 +72,7 @@ function GitlabIcon() {
 function JiraIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor">
-      <path d="M11.53 11.53a3.54 3.54 0 0 0 0-5.01L7.38 2.38a.98.98 0 0 0-1.38 0L1.85 6.53a.98.98 0 0 0 0 1.38l4.15 4.15a3.54 3.54 0 0 0 5.01 0l.52-.53zM22.15 6.53l-4.15-4.15a.98.98 0 0 0-1.38 0L12.47 6.53a3.54 3.54 0 0 0 0 5.01l4.15 4.15a.98.98 0 0 0 1.38 0l4.15-4.15a.98.98 0 0 0 0-1.38v.01zM11.53 22.15l4.15-4.15a.98.98 0 0 0 0-1.38l-4.15-4.15a3.54 3.54 0 0 0-5.01 0l-4.15 4.15a.98.98 0 0 0 0 1.38l4.15 4.15a3.54 3.54 0 0 0 5.01 0z" fill="#2684FF"/>
+      <path d="M11.53 11.53a3.54 3.54 0 0 0 0-5.01L7.38 2.38a.98.98 0 0 0-1.38 0L1.85 6.53a.98.98 0 0 0 0 1.38l4.15 4.15a3.54 3.54 0 0 0 5.01 0l.52-.53zM22.15 6.53l-4.15-4.15a.98.98 0 0 0-1.38 0L12.47 6.53a3.54 3.54 0 0 0 0 5.01l4.15 4.15a.98.98 0 0 0 1.38 0l4.15-4.15a.98.98 0 0 0 0-1.38v.01zM11.53 22.15l4.15-4.15a.98.98 0 0 0 0-1.38l-4.15-4.15a3.54 3.54 0 0 0-5.01 0l-4.15 4.15a.98.98 0 0 0 0 1.38l4.15 4.15a3.54 3.54 0 0 0 5.01 0z" />
     </svg>
   );
 }
@@ -118,7 +118,7 @@ export default function Integration() {
       <main className="app-content integration-page-container relative z-10" aria-label="Integrations content">
         {/* Glow effect */}
         <div className="absolute -left-1/4 -top-1/4 h-[900px] w-[900px] rounded-full bg-primary-60/40 blur-[150px] opacity-100 pointer-events-none" />
-        <div className="absolute -left-1/4 top-0 h-[700px] w-[700px] rounded-full bg-[#2DD4BF]/30 blur-[120px] opacity-90 pointer-events-none" />
+        <div className="absolute -left-1/4 top-0 h-[700px] w-[700px] rounded-full bg-primary-60/30 blur-[120px] opacity-90 pointer-events-none" />
 
         <section className="integration-hero relative z-10">
           <div className="integration-hero-text" data-reveal="fade">
@@ -152,7 +152,7 @@ export default function Integration() {
           <div className="integration-cards">
             {cards.map((card, idx) => (
               <div className="integration-card" key={idx} data-reveal="up" style={{ '--reveal-delay': `${idx * 100}ms` }}>
-                <div className="integration-card-icon">
+                <div className="integration-card-icon text-white">
                   {card.icon}
                 </div>
                 <p>Sync your repositories, automate commits, and pull real-time updates directly into your workspace.</p>

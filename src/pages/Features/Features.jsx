@@ -161,7 +161,7 @@ export default function Features() {
       <main className="app-content relative z-10" aria-label="Features content">
         {/* Glow effect */}
         <div className="absolute -left-1/4 -top-1/4 h-[900px] w-[900px] rounded-full bg-primary-60/40 blur-[150px] opacity-100 pointer-events-none" />
-        <div className="absolute -left-1/4 top-0 h-[700px] w-[700px] rounded-full bg-[#2DD4BF]/30 blur-[120px] opacity-90 pointer-events-none" />
+        <div className="absolute -left-1/4 top-0 h-[700px] w-[700px] rounded-full bg-primary-60/30 blur-[120px] opacity-90 pointer-events-none" />
 
         <section className="features-hero relative z-10" data-reveal="fade">
           <h1 className="features-section-title section-title font-mono text-[56px] leading-[1.05] sm:text-[64px] lg:text-[72px] text-white">Supercharge Your Workflow.</h1>
